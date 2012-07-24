@@ -17,7 +17,7 @@ from being perfect.
 I also took a lazy approach in some rules, parsing directly the source code instead of walking it with tokens. Again, this sounded simpler to do, and
 was, hence the reason you will find it in here.
 
-Other than that, I decided to use string properties instead of CollectionProperty because [http://stylecop.codeplex.com/ StyleCop] does not implement a default value for Collections.
+Other than that, I decided to use string properties instead of `CollectionProperty` because [http://stylecop.codeplex.com/ StyleCop] does not implement a default value for Collections.
 That meant I could not get the code to behave correctly if no Settings.StyleCop configuration was found for this package. That is why you will find
 string properties space delimited for the hungarian prefix validation. Within the code, I split the string property to make it a list.
 

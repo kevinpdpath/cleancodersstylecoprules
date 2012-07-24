@@ -9,7 +9,7 @@ to static implementation, and used the good ideas I found in available custom ru
 done in other packages, mainly the packages listed above.
 
 I have not reinvented the wheel here. Some of the rules in this package are @experimental@. Specially the one that deals with plural variable names. It
-ain't perfect. I feel it shall be an FcXop rule, but I wanted to give it a try with StyleCop. It does OK, catches most of the things but is far, far
+ain't perfect. I feel it shall be an FxCop rule, but I wanted to give it a try with StyleCop. It does OK, catches most of the things but is far, far
 from being perfect.
 
 I also took a lazy approach in some rules, parsing directly the source code instead of walking it with tokens. Again, this sounded simpler to do, and

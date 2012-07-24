@@ -18,11 +18,11 @@ I also took a lazy approach in some rules, parsing directly the source code inst
 was, hence the reason you will find it in here.
 
 Other than that, I decided to use string properties instead of `CollectionProperty` because [http://stylecop.codeplex.com/ StyleCop] does not implement a default value for Collections.
-That meant I could not get the code to behave correctly if no Settings.StyleCop configuration was found for this package. That is why you will find
+That meant I could not get the code to behave correctly if no `Settings.StyleCop` configuration was found for this package. That is why you will find
 string properties space delimited for the hungarian prefix validation. Within the code, I split the string property to make it a list.
 
 You will not find a GUI implementation to graphically configure this package. Again, I want to keep things simple so, you will have to configure it
-manually, or simply live with the default values. Either way, you can find a sample Settings.StyleCop file within the package.
+manually, or simply live with the default values. Either way, you can find a sample `Settings.StyleCop` file within the package.
 
 I tried to name the rules after what can be found in the Clean Code book by Robert C. Martin, and the rule number simply refer to the page of the book
 where the rule is explained.

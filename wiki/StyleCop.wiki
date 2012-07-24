@@ -4,7 +4,7 @@
 
 This project was born out of frustration. I wanted to have the simplest way to create [http://stylecop.codeplex.com/ StyleCop] custom rules, while being able to test them with NUnit.
 
-As it turns out, there are many custom rules out there, there are also packages pre made such as [http://stylecopplus.codeplex.com/ StyleCop+], [http://stylecopcontrib.codeplex.com/ StyleCop Contrib], StyleCopCustomRuleCleanCode.
+As it turns out, there are many custom rules out there, there are also packages pre made such as [http://stylecopplus.codeplex.com/ StyleCop+], [http://stylecopcontrib.codeplex.com/ StyleCop Contrib] and [http://code.google.com/p/stylecopcustomrulecleancode/ StyleCopCustomRuleCleanCode].
 
 None of them please me and fulfilled my needs. This project began rather small. As it grew, I had to refactor it. I found myself going from contreate classes
 to static implementation, and used the good ideas I found in available custom rules to create this package. Hence, some things may look similar to what is

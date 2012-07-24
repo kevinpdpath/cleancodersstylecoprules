@@ -29,7 +29,7 @@ where the rule is explained.
 
 Some of the custom rule found here are "not directly" discussed in Clean Code, but I managed to ties them into something that was in the book.
 
-I for one, run all [http://stylecop.codeplex.com/ StyleCop] rules in my code on top of the ones in this package. I find by running StyleCop as a plugin within JetBrains' Resharper is 
+I for one, run all [http://stylecop.codeplex.com/ StyleCop] rules in my code on top of the ones in this package. I find by running [http://stylecop.codeplex.com/ StyleCop] as a plugin within JetBrains' [http://www.jetbrains.com/resharper/ Resharper] is 
 something that in my mind, every good C# programmer should be doing. It makes things so much simpler....
 
 There are 3 DLLs being referenced in the two projects. StyleCop.dll, StyleCop.CSharp.dll and nunit.framework. The two [http://stylecop.codeplex.com/ StyleCop] references are the DLL that are

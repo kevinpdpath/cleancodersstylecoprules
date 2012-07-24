@@ -1,0 +1,29 @@
+The following is what is required to suppress, in the code, all the rules contained in the Clean Coder StyleCop rules.
+
+Typically, you would slap on of those attributes to a class or a method to remove the warning produced by that rule.
+
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0014:LineHasTrailingSpace", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0019:VariableNameIsNotPlural", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0022:VariableNameHasUnderscore", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0023:VariableNameHasHungarianPrefix", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0025:VariableNameIsTooShort", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0034:MethodContainsTooManyLine", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0035:BlockStatementMustNotBeEmpty", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0037:MethodContainsSwitchStatement", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0041:MethodHasBooleanParameter", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0045:MethodHasOutputParameter", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0048:MethodContainsGotoStatement", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0055:TooManyComment", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0077:ClassContainsTooManyLine", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0085:LineIsTooLong", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0098:LineContainsTrainWreck", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0136:ClassContainsTooManyMethod", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0138:ClassNameHasTooManyWord", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0140:MethodNameHasTooManyWord", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0258:ExpressionHasNegativeConditional", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0295:PropertyContainsTooManyLine", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0301:VariableTypeIsNotExplicit", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0311:FileNameMustMatchTypeName", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0312NameHasNonEnglishCharacter", Justification = "Include your reason here.")]
+

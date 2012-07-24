@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodersStyleCopRules", "CleanCodersStyleCopRules\CleanCodersStyleCopRules.csproj", "{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodersStyleCopRules.Test", "CleanCodersStyleCopRules.Test\CleanCodersStyleCopRules.Test.csproj", "{8A8B0C35-6961-45CF-95A0-C8AD5F8C02FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D0D5F254-A2F5-4770-8626-935532A784C1}"
+	ProjectSection(SolutionItems) = preProject
+		CleanCodersStyleCopRules.Test\Resources\Settings.StyleCop = CleanCodersStyleCopRules.Test\Resources\Settings.StyleCop
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8B0C35-6961-45CF-95A0-C8AD5F8C02FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8B0C35-6961-45CF-95A0-C8AD5F8C02FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8B0C35-6961-45CF-95A0-C8AD5F8C02FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8B0C35-6961-45CF-95A0-C8AD5F8C02FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

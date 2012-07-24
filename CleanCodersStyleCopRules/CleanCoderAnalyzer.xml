@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<SourceAnalyzer Name="CleanCodersStyleCopRules.CleanCoderAnalyzer">
+  <Description>
+    The following custom rules represent some of the rules that form the base of the art of clean coding and way of doing things discussed
+    in detail in a book called "Clean Code", by Robert C. Martin. ISBN-13: 978-0132350884. Some rules are ommited because they are 
+    already a part of the rules enforced by de default rules of StyleCop.
+  </Description>
+  <Properties>
+    <IntegerProperty
+      Name="ClassContainsTooManyLineValue"
+      DefaultValue="500"
+      FriendlyName="Maximum Number Of Lines Per Class"
+      Description="The maximum number of lines per class." />
+    <IntegerProperty
+      Name="ClassContainsTooManyMethodValue"
+      DefaultValue="70"
+      FriendlyName="Maximum Number Of Methods Per Class"
+      Description="The maximum number of methods per class." />
+    <IntegerProperty
+      Name="ClassNameHasTooManyWordValue"
+      DefaultValue="25"
+      FriendlyName="Maximum Number Of Words In Class Name"
+      Description="The maximum number of words in a class name." />
+    <IntegerProperty
+      Name="LineContainsTrainWreckValue"
+      DefaultValue="3"
+      FriendlyName="Minimum Number Of Dots Per Expression For Train Wreck"
+      Description="The minimum of dots per expression for a train wreck." />
+    <IntegerProperty
+      Name="LineIsTooLongValue"
+      DefaultValue="200"
+      FriendlyName="Maximum Line Length"
+      Description="The maximum number of characters per line." />
+    <IntegerProperty
+      Name="MethodContainsTooManyLineValue"
+      DefaultValue="50"
+      FriendlyName="Maximum Number Of Lines Per Method"
+      Description="The maximum number of lines per method." />
+    <IntegerProperty
+      Name="MethodHasTooManyArgumentValue"
+      DefaultValue="3"
+      FriendlyName="Maximum Number Of Arguments Per Method"
+      Description="The maximum number of lines per method." />
+    <IntegerProperty
+      Name="MethodNameHasTooManyWordValue"
+      DefaultValue="25"
+      FriendlyName="Maximum Number Of Words In Method Name"
+      Description="The maximum number of words in a method name." />
+    <IntegerProperty
+      Name="PropertyContainsTooManyLineValue"
+      DefaultValue="30"
+      FriendlyName="Maximum Number Of Lines Per Property"
+      Description="The maximum number of lines per property." />
+    <IntegerProperty
+      Name="TooManyCommentValue"
+      DefaultValue="3"
+      FriendlyName="Maximum Percentage Comment Versus Code"
+      Description="The maximum percentage of comments versus code." />
+    <StringProperty
+      Name="VariableNameHasHungarianPrefixValue"
+      DefaultValue="bln dat dbl err int lng str sng udt vnt"
+      FriendlyName="Invalid Hungarian Prefixes"
+      Description="The list of invalid hungarian prefixes space delimited." />
+      <IntegerProperty
+      Name="VariableNameIsTooShortValue"
+      DefaultValue="2"
+      FriendlyName="Minimum Number Of Character In Variable Name"
+      Description="The minimum number of character in variable name." />
+  </Properties>
+  <Rules>
+    <RuleGroup Name="Custom Rules">
+      <Rule Name="LineHasTrailingSpace" CheckId="CC0014">
+        <Context>
+          The line has trailing spaces that are not necessary to execute your code. Those could also be unprintable characters. Please remove them to keep your code clean.
+        </Context>
+        <Description>
+          Clean Code states that you should apply the boyscout rule: "Leave the campground cleaner than you found it". Do the same with your source code. (Page 14)
+        </Description>
+      </Rule>
+      <Rule Name="VariableNameIsNotPlural" CheckId="CC0019">
+        <Context>
+          The variable '{0}' is not plural, yet, it seems to represent a matrix of some kind. Please refactor the variable to make its name plural.
+        </Context>
+        <Description>
+          Clean Code states that you should always spell your variable with plural when a variable represent a matrix of some kind. (Page 19)
+        </Description>
+      </Rule>
+      <Rule Name="VariableNameHasUnderscore" CheckId="CC0022">
+        <Context>
+          The variable '{0}' contains {1} underscore(s). Please remove the underscore(s) and name the variable properly.
+        </Context>
+        <Description>
+          Clean Code states that you should always use camel case to spell our your method variable names. (Page 22)
+        </Description>
+      </Rule>
+      <Rule Name="VariableNameHasHungarianPrefix" CheckId="CC0023">
+        <Context>
+          The variable '{0}' begins with the hungarian prefix '{1}'. Please remove this hungarian prefix and name the variable properly.
+        </Context>
+        <Description>
+          Clean Code states that there is no need to use hungarian notation anymore. Your text editor and intellisence shall tell you what type of variable it is. (Page 23)
+        </Description>
+      </Rule>
+      <Rule Name="VariableNameIsTooShort" CheckId="CC0025">
+        <Context>
+          The variable '{0}' is {1} character(s) long. That is less than the minimum allowed which is {2} characters. Please refactor the variable to make its name more explicit.
+        </Context>
+        <Description>
+          Clean Code states that you should always use explicit variable names. (Page 25)
+        </Description>
+      </Rule>
+      <Rule Name="MethodContainsTooManyLine" CheckId="CC0034">
+        <Context>
+          The method '{0}' has {1} lines. That is more than the maximum number of lines allowed which is {2}. Please refactor the method to make it smaller.
+        </Context>
+        <Description>
+          Clean Code states that a method should be short, follow the single responsability rule, and be no longer than one page in your text exitor, which is roughly 20 lines. (Page 34)
+        </Description>
+      </Rule>
+      <Rule Name="BlockStatementMustNotBeEmpty" CheckId="CC0035">
+        <Context>
+          A block statement must not be empty. Please refactor the block or remove it in the case where it is no longer needed.
+        </Context>
+        <Description>
+          Clean Code states that a block should do one thing, thus not be empty. (Page 35)
+        </Description>
+      </Rule>
+      <Rule Name="MethodContainsSwitchStatement" CheckId="CC0037">
+        <Context>
+          The switch/case statement could probably be eliminated by polymorphism techniques.
+        </Context>
+        <Description>
+          Clean Code states that you should always prefer polymorphism techniques over the use of a switch case. (Page 37)
+        </Description>
+      </Rule>
+      <Rule Name="MethodHasBooleanParameter" CheckId="CC0041">
+        <Context>
+          The method '{0}' has a boolean parameter named '{1}' which means you are not following the single responsability principle. Please refactor the method to not use such type of parameter.
+        </Context>
+        <Description>
+          Clean Code states that when a method is defined with boolean (flag) arguments, it often leads to a method not following the single responsability principle rule. (Page 41)
+        </Description>
+      </Rule>
+      <Rule Name="MethodHasTooManyArgument" CheckId="CC0042">
+        <Context>
+          The method '{0}' has {1} arguments. That is more than the maximum allowed which is {2} arguments. Please refactor the method to make it work with less arguments.
+        </Context>
+        <Description>
+          Clean Code states that a method should not be defined with more that 2 arguments, because it often leads to a method not following the single responsability principle rule. (Page 42)
+        </Description>
+      </Rule>
+      <Rule Name="MethodHasOutputParameter" CheckId="CC0045">
+        <Context>
+          The method '{0}' has an output parameter named '{1}' which is counterintuitive and should be never be used. Please refactor the method to not use such type of parameter.
+        </Context>
+        <Description>
+          Clean Code states that output parameters are an odd things than can complicate your life. You should try to avoid them as it shows bad code design. (Page 45)
+        </Description>
+      </Rule>
+      <Rule Name="MethodContainsGotoStatement" CheckId="CC0048">
+        <Context>
+          The goto statement must never be used, it is against every imaginable coding law and best practice.
+        </Context>
+        <Description>
+          Clean Code states that you never use a goto statement, period. (Page 48)
+        </Description>
+      </Rule>
+      <Rule Name="TooManyComment" CheckId="CC0055">
+        <Context>
+          Comments do not make up for bad code. '{0}' contains a ratio of {1}% of comments. Maximum ratio allowed is {2}%. Please refactor your code to make it cleaner so, comments are not required.
+        </Context>
+        <Description>
+          Clean Code states that comments do not make up for bad code. However, sometimes it is good to leave comments, but never should you leave noise comments. So, a ratio of 3% of comments shall allow for exceptions. (Page 55)
+        </Description>
+      </Rule>
+      <Rule Name="ClassContainsTooManyLine" CheckId="CC0077">
+        <Context>
+          The class '{0}' has {1} lines. That is more than the maximum number of lines allowed which is {2}. Please refactor the class to make it smaller.
+        </Context>
+        <Description>
+          Clean Code states that a class should be short, follow the single responsability rule, and be no longer than 500 lines, where 200 lines would be ideal. (Page 77)
+        </Description>
+      </Rule>
+      <Rule Name="LineIsTooLong" CheckId="CC0085">
+        <Context>
+          The line is {0} characters long. That is more than the maximum allowed which is {1} characters. Please refactor the line to make it shorter.
+        </Context>
+        <Description>
+          Clean Code states that a line should not be more than 120 characters long. Based on today's 1080p monitor resolution, 200 characters would be the maximum. (Page 85)
+        </Description>
+      </Rule>
+      <Rule Name="LineContainsTrainWreck" CheckId="CC0098">
+        <Context>
+          This is a train wreck with {0} wagons in it. Please refactor this expression to not chain so many 'method().method().method()....' in it.
+        </Context>
+        <Description>
+          Clean Code states that train wrecks (a successive use of '.' to access properties and methods in objects) is bad to a degree, and is absolutely wrong when working with COM object. (Page 98)
+        </Description>
+      </Rule>
+      <Rule Name="ClassContainsTooManyMethod" CheckId="CC0136">
+        <Context>
+          The class '{0}' contains {1} methods. That is more than the maximum number of methods per class which is {2} methods. Please refactor the class to make it smaller.
+        </Context>
+        <Description>
+          Clean Code states that the name of a class should not have more than 70 methods, which back in the day was called a 'God Class'. (Page 136)
+        </Description>
+      </Rule>
+      <Rule Name="ClassNameHasTooManyWord" CheckId="CC0138">
+        <Context>
+          The class name '{0}' has {1} words. That is more than the maximum number of words per class name which is {2} words. Please refactor the class name to make it shorter.
+        </Context>
+        <Description>
+          Clean Code states that the name of a class should be less than 25 words long in camel case format. (Page 138)
+        </Description>
+      </Rule>
+      <Rule Name="MethodNameHasTooManyWord" CheckId="CC0140">
+        <Context>
+          The method name '{0}' has {1} words. That is more than the maximum number of words per method name which is {2} words. Please refactor the method name to make it shorter.
+        </Context>
+        <Description>
+          Clean Code states that the name of a class should be less than 25 words long in camel case format, so should method name. (Page 140)
+        </Description>
+      </Rule>
+      <Rule Name="ExpressionHasNegativeConditional" CheckId="CC0258">
+        <Context>
+          The expression '{0}' make uses of negative conditionals. Please refactor the expression to not use negative conditionals.
+        </Context>
+        <Description>
+          Clean Code states that negative conditionals are hard to spot when reading code, and thus, must be avoided. (Page 258)
+        </Description>
+      </Rule>
+      <Rule Name="PropertyContainsTooManyLine" CheckId="CC0295">
+        <Context>
+          The property '{0}' has {1} lines. That is more than the maximum number of lines allowed which is {2}. Please refactor the property to make it smaller.
+        </Context>
+        <Description>
+          Clean Code states that a method should not be longer than 20 lines. Surely, a property should not be longer than a method. Hence, make sure the property does what it should do, and that a misplaced responsability does not occur within the property itself. (Page 295)
+        </Description>
+      </Rule>
+      <Rule Name="VariableTypeIsNotExplicit" CheckId="CC0301">
+        <Context>
+          The variable '{0}' is defined as a variant type. Variable must always be explicit. Please refactor the variable to use an explicit declaration.
+        </Context>
+        <Description>
+          Clean Code states that we need to be precise, and not be lazy when defining our variables, and thus, variant type must be avoided. (Page 301)
+        </Description>
+      </Rule>
+      <Rule Name="FileNameMustMatchTypeName" CheckId="CC0311">
+        <Context>
+          The file name '{0}' does not match the type name '{1}' its containing. Please refactor the file name to be the same as the type name, except when its a partial class, the file name must then contain the type name.
+        </Context>
+        <Description>
+          Clean Code states that we need to use standard naming whenever possible, this include making sure the file name and type name match perfectly. (Page 311)
+        </Description>
+      </Rule>
+      <Rule Name="NameHasNonEnglishCharacter" CheckId="CC0312">
+        <Context>
+          The name '{0}' has non english character(s) in it. Please refactor the name to use only plain english alphabet.
+        </Context>
+        <Description>
+          Clean Code states that we need to use unambiguous names, having non english characters in a name can lead to problems, so avoid it. (Page 312)
+        </Description>
+      </Rule>
+    </RuleGroup>
+  </Rules>
+</SourceAnalyzer>

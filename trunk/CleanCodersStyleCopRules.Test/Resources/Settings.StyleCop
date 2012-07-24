@@ -1,0 +1,68 @@
+<StyleCopSettings Version="105">
+  <Analyzers>
+    <Analyzer AnalyzerId="StyleCop.CSharp.NamingRules">
+      <AnalyzerSettings>
+        <CollectionProperty Name="Hungarian">
+          <Value>as</Value>
+          <Value>do</Value>
+          <Value>f</Value>
+          <Value>id</Value>
+          <Value>if</Value>
+          <Value>in</Value>
+          <Value>is</Value>
+          <Value>my</Value>
+          <Value>no</Value>
+          <Value>on</Value>
+          <Value>to</Value>
+          <Value>ui</Value>
+        </CollectionProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+    <Analyzer AnalyzerId="CleanCodersStyleCopRules.CleanCoderAnalyzer">
+      <AnalyzerSettings>
+        <IntegerProperty Name="ClassContainsTooManyLineValue">
+          500
+        </IntegerProperty>
+        <IntegerProperty Name="ClassContainsTooManyMethodValue">
+          70
+        </IntegerProperty>
+        <IntegerProperty Name="ClassNameHasTooManyWordValue">
+          25
+        </IntegerProperty>
+        <IntegerProperty Name="LineContainsTrainWreckValue">
+          3
+        </IntegerProperty>
+        <IntegerProperty Name="LineIsTooLongValue">
+          200
+        </IntegerProperty>
+        <IntegerProperty Name="MethodContainsTooManyLineValue">
+          50
+        </IntegerProperty>
+        <IntegerProperty Name="MethodHasTooManyArgumentValue">
+          3
+        </IntegerProperty>
+        <IntegerProperty Name="MethodNameHasTooManyWordValue">
+          25
+        </IntegerProperty>
+        <IntegerProperty Name="PropertyContainsTooManyLineValue">
+          30
+        </IntegerProperty>
+        <IntegerProperty Name="TooManyComment">
+          3
+        </IntegerProperty>
+        <StringProperty Name="VariableNameHasHungarianPrefixValue">
+          bln dat dbl err int lng str sng udt vnt
+        </StringProperty>
+        <IntegerProperty Name="VariableNameIsTooShortValue">
+          2
+        </IntegerProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+    <Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
+      <AnalyzerSettings>
+        <StringProperty Name="CompanyName">None, it's free for all.</StringProperty>
+        <StringProperty Name="Copyright">Copyright (c) None, it's free for all. All rights reserved.</StringProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+  </Analyzers>
+</StyleCopSettings>

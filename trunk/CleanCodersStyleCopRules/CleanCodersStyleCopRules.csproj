@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CleanCodersStyleCopRules</RootNamespace>
+    <AssemblyName>CleanCodersStyleCopRules</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StyleCop, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\StyleCop.dll</HintPath>
+    </Reference>
+    <Reference Include="StyleCop.CSharp, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\StyleCop.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CleanCoderAnalyserSetting.cs" />
+    <Compile Include="CleanCoderAnalyzer.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rule\ClassContainsTooManyLine.cs" />
+    <Compile Include="Rule\ClassContainsTooManyMethod.cs" />
+    <Compile Include="Rule\ClassNameHasTooManyWord.cs" />
+    <Compile Include="Rule\BlockStatementMustNotBeEmpty.cs" />
+    <Compile Include="Rule\MethodNameHasTooManyWord.cs" />
+    <Compile Include="Rule\TooManyComment.cs" />
+    <Compile Include="Rule\NameHasNonEnglishCharacter.cs" />
+    <Compile Include="Rule\PropertyContainsTooManyLine.cs" />
+    <Compile Include="Rule\LineHasTrailingSpace.cs" />
+    <Compile Include="Rule\ExpressionHasNegativeConditional.cs" />
+    <Compile Include="Rule\LineContainsTrainWreck.cs" />
+    <Compile Include="Rule\LineIsTooLong.cs" />
+    <Compile Include="Rule\MethodContainsGotoStatement.cs" />
+    <Compile Include="Rule\MethodContainsSwitchStatement.cs" />
+    <Compile Include="Rule\MethodHasBooleanParameter.cs" />
+    <Compile Include="Rule\MethodHasOutputParameter.cs" />
+    <Compile Include="Rule\MethodHasTooManyArgument.cs" />
+    <Compile Include="Rule\VariableTypeIsNotExplicit.cs" />
+    <Compile Include="Rule\VariableNameIsNotPlural.cs" />
+    <Compile Include="Rule\VariableNameIsTooShort.cs" />
+    <Compile Include="Rule\VariableNameHasUnderscore.cs" />
+    <Compile Include="Rule\VariableNameHasHungarianPrefix.cs" />
+    <Compile Include="Rule\MethodContainsTooManyLine.cs" />
+    <Compile Include="Rule\FileNameMustMatchTypeName.cs" />
+    <Compile Include="Structure\StatementVisitorContainer.cs" />
+    <Compile Include="Structure\ExpressionVisitorContainer.cs" />
+    <Compile Include="Structure\ElementVisitorContainer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CleanCoderAnalyzer.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\ReadMe.txt" />
+    <Content Include="lib\StyleCop.CSharp.dll" />
+    <Content Include="lib\StyleCop.dll" />
+    <Content Include="ReadMe.txt" />
+    <Content Include="RuleSuppression.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

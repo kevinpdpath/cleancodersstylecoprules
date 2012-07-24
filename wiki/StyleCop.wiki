@@ -1,6 +1,6 @@
 #summary CleanCodersStyleCopRules
 
-= Clean Coders StyleCop Rules =
+= CleanCodersStyleCopRules =
 
 This project was born out of frustration. I wanted to have the simplest way to create StyleCop custom rules, while being able to test them with NUnit.
 

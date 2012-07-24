@@ -32,7 +32,7 @@ Some of the custom rule found here are "not directly" discussed in Clean Code, b
 I for one, run all [http://stylecop.codeplex.com/ StyleCop] rules in my code on top of the ones in this package. I find by running [http://stylecop.codeplex.com/ StyleCop] as a plugin within  [http://www.jetbrains.com/resharper/ JetBrains' Resharper] is 
 something that in my mind, every good C# programmer should be doing. It makes things so much simpler....
 
-There are 3 DLLs being referenced in the two projects. StyleCop.dll, StyleCop.CSharp.dll and nunit.framework. The two [http://stylecop.codeplex.com/ StyleCop] references are the DLL that are
+There are 3 DLLs being referenced in the two projects. `StyleCop.dll`, `StyleCop.CSharp.dll` and `nunit.framework`. The two [http://stylecop.codeplex.com/ StyleCop] references are the DLL that are
 installed when you install [http://stylecop.codeplex.com/ StyleCop] on your machine. You can simply copy your installation DLL over the ones found inside the lib directory or redo the
 references to point directly to your [http://stylecop.codeplex.com/ StyleCop] installed DLL. Same goes for the NUnit DLL.
 

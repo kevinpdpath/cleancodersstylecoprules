@@ -51,7 +51,7 @@
           3
         </IntegerProperty>
         <StringProperty Name="VariableNameHasHungarianPrefixValue">
-          bln dat dbl err int lng str sng udt vnt
+          arr bln byt cur dat dbl err int lng obj str sng udt vnt
         </StringProperty>
         <IntegerProperty Name="VariableNameIsTooShortValue">
           2

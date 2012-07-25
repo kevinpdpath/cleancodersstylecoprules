@@ -59,7 +59,7 @@
       Description="The maximum percentage of comments versus code." />
     <StringProperty
       Name="VariableNameHasHungarianPrefixValue"
-      DefaultValue="bln dat dbl err int lng str sng udt vnt"
+      DefaultValue="arr bln byt cur dat dbl err int lng obj str sng udt vnt"
       FriendlyName="Invalid Hungarian Prefixes"
       Description="The list of invalid hungarian prefixes space delimited." />
       <IntegerProperty

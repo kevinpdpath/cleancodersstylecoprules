@@ -21,7 +21,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Methods definition with one error.
         /// </summary>
-        public void MethodWithOneError()
+        public void WithOneError()
         {
             var date = DateTime.Now;
         }

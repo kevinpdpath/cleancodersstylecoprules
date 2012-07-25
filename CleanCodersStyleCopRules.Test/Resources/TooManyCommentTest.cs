@@ -30,7 +30,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         /// The one comment.
         /// </summary>
-        public void MethodTooLong()
+        public void TooLong()
         {
             // Initialize our variable.
             int abc = 0;

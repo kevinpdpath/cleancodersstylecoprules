@@ -25,9 +25,9 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        /// Gets the property setting name.
+        /// Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -93,9 +93,9 @@ namespace CleanCodersStyleCopRules.Rule
 
             decimal percentComment = Math.Round(ratio, 1);
 
-            if (percentComment > (int)context.AnalyserSetting[PropertySettingName])
+            if (percentComment > (int)context.AnalyserSetting[RuleSettingName])
             {
-                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, percentComment, context.AnalyserSetting[PropertySettingName]);
+                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, percentComment, context.AnalyserSetting[RuleSettingName]);
             }
 
             return true;

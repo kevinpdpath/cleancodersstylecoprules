@@ -22,7 +22,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Methods definition with one error.
         /// </summary>
-        public void MethodTrainWreckExpression()
+        public void TrainWreckExpression()
         {
             Person me = new Person();
 

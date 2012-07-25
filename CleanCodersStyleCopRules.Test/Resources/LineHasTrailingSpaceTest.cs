@@ -19,9 +19,9 @@ namespace CleanCodersStyleCopRules.Test.Resources
         #region Public Methods and Operators
 
         /// <summary>           
-        ///   The method 1.     
+        ///   The test 1.     
         /// </summary>          
-        public void Method1()   
+        public void Test1()   
         {
             if (true)
             {

@@ -222,7 +222,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         ///   The sample method.
         /// </summary>
         /// <exception cref="NotImplementedException">Some text here.</exception>
-        public void SampleMethod()
+        public void Sample()
         {
             throw new NotImplementedException();
         }
@@ -240,7 +240,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   The sample method.
         /// </summary>
-        void SampleMethod();
+        void Sample();
 
         #endregion
     }

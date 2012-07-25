@@ -29,7 +29,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// The method with output parameter in dll import.
         /// </returns>
         [DllImport("dummy.so")]
-        public static extern int MethodWithOutputParameterInDllImport(out IntPtr outputParam);
+        public static extern int WithOutputParameterInDllImport(out IntPtr outputParam);
 
         /// <summary>
         /// Methods the with output parameter.
@@ -37,7 +37,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="outputParam">
         /// The output parameter that violates the rule.
         /// </param>
-        public void MethodWithOutputParameter(out string outputParam)
+        public void WithOutputParameter(out string outputParam)
         {
             outputParam = "Hello World";
         }

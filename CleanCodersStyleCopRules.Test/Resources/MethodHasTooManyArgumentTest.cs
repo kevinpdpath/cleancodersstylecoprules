@@ -34,7 +34,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="klm">
         /// The klm.
         /// </param>
-        public void MethodDefinitionWithMaximumNumberOfArgument(int abc, int def, int ghi, int klm)
+        public void WithMaximumNumberOfArgument(int abc, int def, int ghi, int klm)
         {
         }
 
@@ -44,7 +44,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="abc">
         /// The parameter abc.
         /// </param>
-        public void MethodDefinitionWithOneArgument(int abc)
+        public void WithOneArgument(int abc)
         {
         }
 
@@ -60,7 +60,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="ghi">
         /// The parameter ghi.
         /// </param>
-        public void MethodDefinitionWithTooManyArgument(int abc, int def, int ghi)
+        public void WithTooManyArgument(int abc, int def, int ghi)
         {
         }
 

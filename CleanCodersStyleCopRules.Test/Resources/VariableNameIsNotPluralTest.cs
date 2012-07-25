@@ -33,7 +33,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         /// Methods with errors.
         /// </summary>
-        public void MethodWithErrors()
+        public void WithErrors()
         {
             int[] gougou;
             System.Collections.ArrayList arrayList;

@@ -27,7 +27,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="year2">
         /// The parameter year2.
         /// </param>
-        public void MethodWithTwoErrors(int year1, int year2)
+        public void WithTwoErrors(int year1, int year2)
         {
             if (DateTime.IsLeapYear(year1))
             {

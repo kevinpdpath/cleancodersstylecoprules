@@ -27,9 +27,9 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        /// Gets the property setting name.
+        /// Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -99,7 +99,7 @@ namespace CleanCodersStyleCopRules.Rule
 
                 if (numberOfWagon > 3)
                 {
-                    context.AddViolation(documentRoot, currentLineNumber, RuleName, numberOfWagon, context.AnalyserSetting[PropertySettingName]);
+                    context.AddViolation(documentRoot, currentLineNumber, RuleName, numberOfWagon, context.AnalyserSetting[RuleSettingName]);
                 }
             }
 

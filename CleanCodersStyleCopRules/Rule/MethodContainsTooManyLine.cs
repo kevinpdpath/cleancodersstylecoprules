@@ -24,9 +24,9 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        /// Gets the property setting name.
+        /// Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -81,9 +81,9 @@ namespace CleanCodersStyleCopRules.Rule
 
             int numberOfLinesInMethod = lastToken.LineNumber - firstLineNumber;
 
-            if (numberOfLinesInMethod > (int)context.AnalyserSetting[PropertySettingName])
+            if (numberOfLinesInMethod > (int)context.AnalyserSetting[RuleSettingName])
             {
-                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, numberOfLinesInMethod, context.AnalyserSetting[PropertySettingName]);
+                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, numberOfLinesInMethod, context.AnalyserSetting[RuleSettingName]);
             }
 
             return true;

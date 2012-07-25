@@ -31,7 +31,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="last_name">
         /// The parameter last_name.
         /// </param>
-        public void MethodDefinitionWithOneErrors(int last_name)
+        public void WithOneErrors(int last_name)
         {
         }
 
@@ -44,7 +44,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="year_of_birth">
         /// The parameter year_of_birth.
         /// </param>
-        public void MethodWithTwoErrors(int age, int year_of_birth)
+        public void WithTwoErrors(int age, int year_of_birth)
         {
             string color_name;
         }

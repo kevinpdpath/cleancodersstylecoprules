@@ -170,29 +170,29 @@ namespace CleanCodersStyleCopRules
         /// </remarks>
         private void LoadDocumentSettings(Settings settings)
         {
-            this.propertySettings.Add(ClassContainsTooManyLine.PropertySettingName, this.GetPropertySetting<int>(settings, ClassContainsTooManyLine.PropertySettingName));
+            this.propertySettings.Add(ClassContainsTooManyLine.RuleSettingName, this.GetPropertySetting<int>(settings, ClassContainsTooManyLine.RuleSettingName));
 
-            this.propertySettings.Add(ClassContainsTooManyMethod.PropertySettingName, this.GetPropertySetting<int>(settings, ClassContainsTooManyMethod.PropertySettingName));
+            this.propertySettings.Add(ClassContainsTooManyMethod.RuleSettingName, this.GetPropertySetting<int>(settings, ClassContainsTooManyMethod.RuleSettingName));
 
-            this.propertySettings.Add(ClassNameHasTooManyWord.PropertySettingName, this.GetPropertySetting<int>(settings, ClassNameHasTooManyWord.PropertySettingName));
+            this.propertySettings.Add(ClassNameHasTooManyWord.RuleSettingName, this.GetPropertySetting<int>(settings, ClassNameHasTooManyWord.RuleSettingName));
 
-            this.propertySettings.Add(LineContainsTrainWreck.PropertySettingName, this.GetPropertySetting<int>(settings, LineContainsTrainWreck.PropertySettingName));
+            this.propertySettings.Add(LineContainsTrainWreck.RuleSettingName, this.GetPropertySetting<int>(settings, LineContainsTrainWreck.RuleSettingName));
 
-            this.propertySettings.Add(LineIsTooLong.PropertySettingName, this.GetPropertySetting<int>(settings, LineIsTooLong.PropertySettingName));
+            this.propertySettings.Add(LineIsTooLong.RuleSettingName, this.GetPropertySetting<int>(settings, LineIsTooLong.RuleSettingName));
 
-            this.propertySettings.Add(MethodContainsTooManyLine.PropertySettingName, this.GetPropertySetting<int>(settings, MethodContainsTooManyLine.PropertySettingName));
+            this.propertySettings.Add(MethodContainsTooManyLine.RuleSettingName, this.GetPropertySetting<int>(settings, MethodContainsTooManyLine.RuleSettingName));
 
-            this.propertySettings.Add(MethodHasTooManyArgument.PropertySettingName, this.GetPropertySetting<int>(settings, MethodHasTooManyArgument.PropertySettingName));
+            this.propertySettings.Add(MethodHasTooManyArgument.RuleSettingName, this.GetPropertySetting<int>(settings, MethodHasTooManyArgument.RuleSettingName));
 
-            this.propertySettings.Add(VariableNameHasHungarianPrefix.PropertySettingName, this.GetStringPropertySettingAsList(settings, VariableNameHasHungarianPrefix.PropertySettingName));
+            this.propertySettings.Add(VariableNameHasHungarianPrefix.RuleSettingName, this.GetStringPropertySettingAsList(settings, VariableNameHasHungarianPrefix.RuleSettingName));
 
-            this.propertySettings.Add(VariableNameIsTooShort.PropertySettingName, this.GetPropertySetting<int>(settings, VariableNameIsTooShort.PropertySettingName));
+            this.propertySettings.Add(VariableNameIsTooShort.RuleSettingName, this.GetPropertySetting<int>(settings, VariableNameIsTooShort.RuleSettingName));
 
-            this.propertySettings.Add(PropertyContainsTooManyLine.PropertySettingName, this.GetPropertySetting<int>(settings, PropertyContainsTooManyLine.PropertySettingName));
+            this.propertySettings.Add(PropertyContainsTooManyLine.RuleSettingName, this.GetPropertySetting<int>(settings, PropertyContainsTooManyLine.RuleSettingName));
 
-            this.propertySettings.Add(TooManyComment.PropertySettingName, this.GetPropertySetting<int>(settings, TooManyComment.PropertySettingName));
+            this.propertySettings.Add(TooManyComment.RuleSettingName, this.GetPropertySetting<int>(settings, TooManyComment.RuleSettingName));
 
-            this.propertySettings.Add(MethodNameHasTooManyWord.PropertySettingName, this.GetPropertySetting<int>(settings, MethodNameHasTooManyWord.PropertySettingName));
+            this.propertySettings.Add(MethodNameHasTooManyWord.RuleSettingName, this.GetPropertySetting<int>(settings, MethodNameHasTooManyWord.RuleSettingName));
         }
 
         #endregion

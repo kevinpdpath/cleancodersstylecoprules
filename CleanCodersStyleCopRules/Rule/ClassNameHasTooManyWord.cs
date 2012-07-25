@@ -20,14 +20,15 @@ namespace CleanCodersStyleCopRules.Rule
     /// <summary>
     ///   StyleCop custom rule that validates if a the class name contains too many words.
     /// </summary>
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public static class ClassNameHasTooManyWord
     {
         #region Public Properties
 
         /// <summary>
-        ///   Gets the property setting name.
+        ///   Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -73,9 +74,9 @@ namespace CleanCodersStyleCopRules.Rule
 
             string[] classNameParts = Utility.SplitStringAtUpperCaseLetter(element.Declaration.Name);
 
-            if (classNameParts.Length > (int)context.AnalyserSetting[PropertySettingName])
+            if (classNameParts.Length > (int)context.AnalyserSetting[RuleSettingName])
             {
-                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, classNameParts.Length, context.AnalyserSetting[PropertySettingName]);
+                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, classNameParts.Length, context.AnalyserSetting[RuleSettingName]);
             }
 
             return true;

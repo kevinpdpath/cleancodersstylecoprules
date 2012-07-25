@@ -193,6 +193,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
         private static void ParseMethod(Method method, CleanCoderAnalyzer context)
         {
             string methodName = Utility.TrimGenericType(method.Declaration.Name);

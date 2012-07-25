@@ -77,7 +77,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="strSurName">
         /// The parameter strSurName.
         /// </param>
-        public void MethodWithOneErrors(int lastName, int strSurName)
+        public void WithOneErrors(int lastName, int strSurName)
         {
         }
 
@@ -88,7 +88,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// The parameter intAge.
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0301:VariableTypeIsNotExplicit", Justification = "It's for a test.")]
-        public void MethodWithThreeErrors(int intAge)
+        public void WithThreeErrors(int intAge)
         {
             string colorName;
 
@@ -106,7 +106,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="def">
         /// The parameter def.
         /// </param>
-        public void MethodWithoutErrors(int abc, int def)
+        public void WithoutErrors(int abc, int def)
         {
             string lastName;
         }

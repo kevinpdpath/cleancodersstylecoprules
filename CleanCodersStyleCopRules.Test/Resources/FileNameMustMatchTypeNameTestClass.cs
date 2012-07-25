@@ -15,6 +15,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     ///   Dummy class to unit test the FileNameMustMatchTypeName custom StyleCop rule.
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1649:FileHeaderFileNameDocumentationMustMatchTypeName", Justification = "It's for a test.")]
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public class FileNameMustMatchTypeNameTestClassBadFileName
     {
     }

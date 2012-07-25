@@ -29,7 +29,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// The method with output parameter in dll import.
         /// </returns>
         [DllImport("dummy.so")]
-        public static extern int MethodWithOutputParameterInDllImport(bool isMale);
+        public static extern int WithOutputParameterInDllImport(bool isMale);
 
         /// <summary>
         /// Methods the with boolean parameter.
@@ -37,7 +37,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="flag">
         /// If set to <c>true</c> [do this or that], hence, two responsabilities, which is bad.
         /// </param>
-        public void MethodWithBooleanParameter(bool flag)
+        public void WithBooleanParameter(bool flag)
         {
             if (flag)
             {

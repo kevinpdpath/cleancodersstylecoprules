@@ -24,7 +24,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="paramForSwitch">
         /// The param for switch.
         /// </param>
-        public void MethodHasSwitchStatement(string paramForSwitch)
+        public void HasSwitchStatement(string paramForSwitch)
         {
             switch (paramForSwitch)
             {

@@ -19,7 +19,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         /// Methods with a too long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long decription.
         /// </summary>
-        public void MethodWithError()
+        public void WithError()
         {
             string longLine =
                 "long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long  long";

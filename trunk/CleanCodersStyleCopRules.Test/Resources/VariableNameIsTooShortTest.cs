@@ -36,7 +36,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Methods definition with one error.
         /// </summary>
-        public void MethodWithOneErrors()
+        public void WithOneErrors()
         {
             string c;
 
@@ -53,7 +53,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// The parameter y.
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0055:TooManyComment", Justification = "Euh, well, it need a little explaining here.")]
-        public void MethodWithTwoErrors(int x, int y)
+        public void WithTwoErrors(int x, int y)
         {
             // Variables inside a for loop are accepted, but keep the for loop within 5 lines long.
             for (int z = 0; z < int.MaxValue; z++)

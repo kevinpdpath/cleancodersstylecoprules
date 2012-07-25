@@ -22,7 +22,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethod()
+        public void FiftyLine()
         {
             int abc = 0;
             abc += 1;
@@ -77,7 +77,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Methods definition with Four error.
         /// </summary>
-        public void MethodTooLong()
+        public void TooLong()
         {
             int abc = 0;
             abc += 1;
@@ -145,7 +145,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Short method, no lines, well, actually, 2, the squidlies are counted in the body of the method.
         /// </summary>
-        public void ShortMethod()
+        public void Short()
         {
         }
 

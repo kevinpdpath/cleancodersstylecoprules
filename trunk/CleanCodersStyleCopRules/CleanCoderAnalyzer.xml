@@ -246,6 +246,14 @@
           Clean Code states that we need to be precise, and not be lazy when defining our variables, and thus, variant type must be avoided. (Page 301)
         </Description>
       </Rule>
+      <Rule Name="DescriptiveNameTooExplicit" CheckId="CC0309">
+        <Context>
+          The name '{0}' is contains the word '{1}'. You are being too explicit. Please refactor the name to not include the word '{1}'.
+        </Context>
+        <Description>
+          Clean Code states that we need to choose descriptive names. You do not need to include the type of element the name, it is rather overkill and useless. (Page 309)
+        </Description>
+      </Rule>
       <Rule Name="FileNameMustMatchTypeName" CheckId="CC0311">
         <Context>
           The file name '{0}' does not match the type name '{1}' its containing. Please refactor the file name to be the same as the type name, except when its a partial class, the file name must then contain the type name.

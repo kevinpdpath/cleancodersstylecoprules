@@ -14,6 +14,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   Dummy class to unit test the ClassNameHasTooManyWord custom StyleCop rule.
     /// </summary>
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public class ClassNameHasTooManyWordTest
     {
     }
@@ -22,6 +23,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     ///   Dummy class to unit test the ClassNameHasTooManyWord custom StyleCop rule.
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "It's for a test.")]
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public class ClassNameContainsTooManyWordTheQuickBrownFoxJumpsOverTheLazyDogTheQuickBrownFoxJumpsOverTheLazyBadDog
     {
     }
@@ -30,6 +32,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     ///   Dummy class to unit test the ClassNameHasTooManyWord custom StyleCop rule.
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "It's for a test.")]
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public class ClassNameContainsTooManyWordTheQuickBrownFoxJumpsOverTheLazyDogTheQuickBrownFoxJumpsOverTheLazyBadBadBadBadBadBadBadBadBadBadBadBadBadBadDog
     {
     }

@@ -25,9 +25,9 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        /// Gets the property setting name.
+        /// Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -78,16 +78,16 @@ namespace CleanCodersStyleCopRules.Rule
                 return true;
             }
 
-            if (Utility.MethodHasDllImportAttribute(method))
+            if (Utility.HasDllImportAttribute(method))
             {
                 return true;
             }
 
             int actualNumberOfParameters = method.Parameters.Count;
 
-            if (actualNumberOfParameters > (int)context.AnalyserSetting[PropertySettingName])
+            if (actualNumberOfParameters > (int)context.AnalyserSetting[RuleSettingName])
             {
-                context.AddViolation(method, method.LineNumber, RuleName, method.Declaration.Name, actualNumberOfParameters, context.AnalyserSetting[PropertySettingName]);
+                context.AddViolation(method, method.LineNumber, RuleName, method.Declaration.Name, actualNumberOfParameters, context.AnalyserSetting[RuleSettingName]);
             }
 
             return true;

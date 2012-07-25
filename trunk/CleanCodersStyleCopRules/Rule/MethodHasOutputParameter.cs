@@ -67,7 +67,7 @@ namespace CleanCodersStyleCopRules.Rule
                 return true;
             }
 
-            if (Utility.MethodHasDllImportAttribute(method))
+            if (Utility.HasDllImportAttribute(method))
             {
                 return true;
             }

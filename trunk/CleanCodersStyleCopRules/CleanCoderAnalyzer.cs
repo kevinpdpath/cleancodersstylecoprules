@@ -164,6 +164,23 @@ namespace CleanCodersStyleCopRules
             this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = TooManyComment.Validate });
 
             this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodNameHasTooManyWord.Validate });
+
+            this.ElementVisitorRegistry.Add(
+                new ElementVisitorContainer
+                    {
+                        ElementTypes = new List<ElementType>
+                            {
+                                ElementType.Enum,
+                                ElementType.EnumItem,
+                                ElementType.Class,
+                                ElementType.Interface,
+                                ElementType.Method,
+                                ElementType.Struct,
+                                ElementType.Field,
+                                ElementType.Property
+                            }, 
+                            MethodCallback = DescriptiveNameTooExplicit.Validate
+                    });
         }
 
         /// <summary>

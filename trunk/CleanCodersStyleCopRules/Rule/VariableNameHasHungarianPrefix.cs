@@ -27,9 +27,9 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        /// Gets the property setting name.
+        /// Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -122,7 +122,7 @@ namespace CleanCodersStyleCopRules.Rule
                 return;
             }
 
-            List<string> invalidPrefix = (List<string>)context.AnalyserSetting[PropertySettingName];
+            List<string> invalidPrefix = (List<string>)context.AnalyserSetting[RuleSettingName];
 
             if (invalidPrefix.Contains(variableParts[0]))
             {

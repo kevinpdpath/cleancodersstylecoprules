@@ -146,7 +146,7 @@ namespace CleanCodersStyleCopRules.Common
         /// <returns>
         /// Returns True if the specified method has the DLL import attribute; otherwise, False. 
         /// </returns>
-        public static bool MethodHasDllImportAttribute(Method method)
+        public static bool HasDllImportAttribute(Method method)
         {
             Param.AssertNotNull(method, "method");
 

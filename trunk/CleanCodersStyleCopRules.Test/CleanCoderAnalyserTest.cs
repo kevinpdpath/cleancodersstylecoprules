@@ -56,6 +56,15 @@ namespace CleanCodersStyleCopRules.Test
         }
 
         /// <summary>
+        /// The descriptive name too explicit test.
+        /// </summary>
+        [Test]
+        public void DescriptiveNameTooExplicitTest()
+        {
+            this.AnalyzeCodeWithAssertion("DescriptiveNameTooExplicitTest.cs", 8);
+        }
+
+        /// <summary>
         ///   The expression has negative conditional.
         /// </summary>
         [Test]
@@ -191,7 +200,7 @@ namespace CleanCodersStyleCopRules.Test
         }
 
         /// <summary>
-        /// The method name has too many word.
+        ///   The method name has too many word.
         /// </summary>
         [Test]
         public void MethodNameHasTooManyWord()

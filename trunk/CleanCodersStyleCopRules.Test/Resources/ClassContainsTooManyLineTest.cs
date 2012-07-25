@@ -15,6 +15,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   Dummy class to unit test the ClassContainsTooManyLine custom StyleCop rule.
     /// </summary>
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public class ClassContainsTooManyLineTest
     {
         #region Public Methods and Operators
@@ -22,7 +23,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodA()
+        public void FiftyLineA()
         {
             int abc = 0;
             abc += 1;
@@ -77,7 +78,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodB()
+        public void FiftyLineB()
         {
             int abc = 0;
             abc += 1;
@@ -132,7 +133,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodC()
+        public void FiftyLineC()
         {
             int abc = 0;
             abc += 1;
@@ -187,7 +188,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodD()
+        public void FiftyLineD()
         {
             int abc = 0;
             abc += 1;
@@ -242,7 +243,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodE()
+        public void FiftyLineE()
         {
             int abc = 0;
             abc += 1;
@@ -297,7 +298,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodF()
+        public void FiftyLineF()
         {
             int abc = 0;
             abc += 1;
@@ -352,7 +353,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodG()
+        public void FiftyLineG()
         {
             int abc = 0;
             abc += 1;
@@ -407,7 +408,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodH()
+        public void FiftyLineH()
         {
             int abc = 0;
             abc += 1;
@@ -462,7 +463,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodI()
+        public void FiftyLineI()
         {
             int abc = 0;
             abc += 1;
@@ -520,6 +521,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     ///   Dummy class to unit test the ClassContainsTooManyLine custom StyleCop rule.
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "It's for a test.")]
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public class ClassContainsMoreThan500Line
     {
         #region Public Methods and Operators
@@ -527,7 +529,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodA()
+        public void FiftyLineA()
         {
             int abc = 0;
             abc += 1;
@@ -582,7 +584,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodB()
+        public void FiftyLineB()
         {
             int abc = 0;
             abc += 1;
@@ -637,7 +639,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodC()
+        public void FiftyLineC()
         {
             int abc = 0;
             abc += 1;
@@ -692,7 +694,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodD()
+        public void FiftyLineD()
         {
             int abc = 0;
             abc += 1;
@@ -747,7 +749,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodE()
+        public void FiftyLineE()
         {
             int abc = 0;
             abc += 1;
@@ -802,7 +804,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodF()
+        public void FiftyLineF()
         {
             int abc = 0;
             abc += 1;
@@ -857,7 +859,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodG()
+        public void FiftyLineG()
         {
             int abc = 0;
             abc += 1;
@@ -912,7 +914,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodH()
+        public void FiftyLineH()
         {
             int abc = 0;
             abc += 1;
@@ -967,7 +969,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
         /// </summary>
-        public void FiftyLineMethodI()
+        public void FiftyLineI()
         {
             int abc = 0;
             abc += 1;

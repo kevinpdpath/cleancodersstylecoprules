@@ -24,7 +24,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="number">
         /// The param number.
         /// </param>
-        public void MethodHasGotoStatement(int? number)
+        public void HasGotoStatement(int? number)
         {
             if (number == null)
             {

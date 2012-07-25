@@ -19,14 +19,15 @@ namespace CleanCodersStyleCopRules.Rule
     /// <summary>
     ///   StyleCop custom rule that validates if a class contains too many lines.
     /// </summary>
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
     public static class ClassContainsTooManyLine
     {
         #region Public Properties
 
         /// <summary>
-        /// Gets the property setting name.
+        /// Gets the rule setting name.
         /// </summary>
-        public static string PropertySettingName
+        public static string RuleSettingName
         {
             get
             {
@@ -83,9 +84,9 @@ namespace CleanCodersStyleCopRules.Rule
 
             int numberOfLinesInClass = lastLineNumer - firstLineNumber + 1;
 
-            if (numberOfLinesInClass > (int)context.AnalyserSetting[PropertySettingName])
+            if (numberOfLinesInClass > (int)context.AnalyserSetting[RuleSettingName])
             {
-                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, numberOfLinesInClass, context.AnalyserSetting[PropertySettingName]);
+                context.AddViolation(element, element.LineNumber, RuleName, element.Declaration.Name, numberOfLinesInClass, context.AnalyserSetting[RuleSettingName]);
             }
 
             return true;

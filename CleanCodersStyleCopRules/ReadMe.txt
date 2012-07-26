@@ -25,7 +25,7 @@ manually, or simply live with the default values. Either way, you can find a sam
 I tried to name the rules after what can be found in the Clean Code book by Robert C. Martin, and the rule number simply refer to the page of the book
 where the rule is explained.
 
-Some of the custom rule found here are "not directly" discussed in Clean Code, but I managed to ties them into something that was in the book.
+Some of the custom rule found here are "not directly" discussed in Clean Code, but I managed to tie them into something that was in the book.
 
 I for one, run all StyleCop rules in my code on top of the ones in this package. I find by running StyleCop as a plugin within JetBrains' Resharper is 
 something that in my mind, every good C# programmer should be doing. It makes things so much simpler....

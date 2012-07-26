@@ -9,11 +9,14 @@
 
 namespace CleanCodersStyleCopRules.Test
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using NUnit.Framework;
 
     /// <summary>
     ///   The tests for the Clean Coder analyzer.
     /// </summary>
+    [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "Method names equals the rule name.")]
     [TestFixture]
     public class CleanCoderAnalyserTest : TestFixtureBase
     {
@@ -53,6 +56,15 @@ namespace CleanCodersStyleCopRules.Test
         public void ClassNameHasTooManyWord()
         {
             this.AnalyzeCodeWithAssertion("ClassNameHasTooManyWordTest.cs", 1);
+        }
+
+        /// <summary>
+        /// The constant is not pascal case.
+        /// </summary>
+        [Test]
+        public void ConstantIsNotPascalCase()
+        {
+            this.AnalyzeCodeWithAssertion("ConstantIsNotPascalCaseTest.cs", 6);
         }
 
         /// <summary>

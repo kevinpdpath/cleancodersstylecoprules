@@ -181,6 +181,9 @@ namespace CleanCodersStyleCopRules
                             }, 
                             MethodCallback = DescriptiveNameTooExplicit.Validate
                     });
+
+            this.ElementVisitorRegistry.Add(
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Field, ElementType.Method }, MethodCallback = ConstantIsNotPascalCase.Validate });
         }
 
         /// <summary>

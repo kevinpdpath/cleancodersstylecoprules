@@ -270,6 +270,14 @@
           Clean Code states that we need to use unambiguous names, having non english characters in a name can lead to problems, so avoid it. (Page 312)
         </Description>
       </Rule>
+      <Rule Name="ConstantIsNotPascalCase" CheckId="CC0330">
+        <Context>
+          The constant '{0}' is not following the PascalCase naming standard. Please refactor the constant name to follow the PascalCase naming standard.
+        </Context>
+        <Description>
+          Clean Code states that we need to follow standard convention. (Page 330)
+        </Description>
+      </Rule>
     </RuleGroup>
   </Rules>
 </SourceAnalyzer>

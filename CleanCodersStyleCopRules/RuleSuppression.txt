@@ -26,5 +26,5 @@ Typically, you would slap on of those attributes to a class or a method to remov
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0301:VariableTypeIsNotExplicit", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0311:FileNameMustMatchTypeName", Justification = "Include your reason here.")]
-[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0312NameHasNonEnglishCharacter", Justification = "Include your reason here.")]
-
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0312:NameHasNonEnglishCharacter", Justification = "Include your reason here.")]
+[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0330:ConstantIsNotPascalCase", Justification = "Include your reason here.")]

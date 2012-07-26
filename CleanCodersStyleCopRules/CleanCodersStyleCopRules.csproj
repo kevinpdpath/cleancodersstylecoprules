@@ -60,6 +60,7 @@
     <Compile Include="Rule\ClassContainsTooManyMethod.cs" />
     <Compile Include="Rule\ClassNameHasTooManyWord.cs" />
     <Compile Include="Rule\BlockStatementMustNotBeEmpty.cs" />
+    <Compile Include="Rule\ConstantIsNotPascalCase.cs" />
     <Compile Include="Rule\DescriptiveNameTooExplicit.cs" />
     <Compile Include="Rule\MethodNameHasTooManyWord.cs" />
     <Compile Include="Rule\TooManyComment.cs" />

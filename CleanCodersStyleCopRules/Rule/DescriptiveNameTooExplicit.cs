@@ -23,17 +23,6 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule setting name.
-        /// </summary>
-        public static string RuleSettingName
-        {
-            get
-            {
-                return MethodBase.GetCurrentMethod().ReflectedType.Name + "Value";
-            }
-        }
-
-        /// <summary>
         ///   Gets the rule name.
         /// </summary>
         public static string RuleName

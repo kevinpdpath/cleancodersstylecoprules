@@ -1,0 +1,19 @@
+#summary Summary Of Activity
+
+= Activity =
+
+*July 25th, 2012*
+
+Added new rule that validates if the name of a Class, Method, Field, contains the name of its type, hence a class called MyClass would raise a violation.
+
+*July 26th, 2012*
+
+Added a new rule that validates if constant, field or variable, are spelled with the PascalCase naming convention.
+
+*July 27th, 2012*
+
+Bug fix in the NameHasNonEnglishCharacter rule where strongly types class, would violate the rule because of the `<T>` suffix.
+
+Optimizations to the ClassContainsTooManyLine, MethodContainsTooManyLine and PropertyContainsTooManyLine
+
+Update the Trunk to match StyleCop v4.7.35.0

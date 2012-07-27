@@ -14,6 +14,6 @@ Added a new rule that validates if constant, field or variable, are spelled with
 
 Bug fix in the NameHasNonEnglishCharacter rule where strongly types class, would violate the rule because of the `<T>` suffix.
 
-Optimizations to the ClassContainsTooManyLine, MethodContainsTooManyLine and PropertyContainsTooManyLine
+Optimizations to the `ClassContainsTooManyLine`, `MethodContainsTooManyLine` and `PropertyContainsTooManyLine`
 
 Update the Trunk to match StyleCop v4.7.35.0

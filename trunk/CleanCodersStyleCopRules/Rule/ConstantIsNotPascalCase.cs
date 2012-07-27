@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ConstantIsNotPascalCase.cs" company="">
-//   
+// <copyright file="ConstantIsNotPascalCase.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
 // <summary>
 //   StyleCop custom rule that validates if a constant is not following the PascalCase convention.

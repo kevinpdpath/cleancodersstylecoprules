@@ -4,7 +4,7 @@ This project was born out of frustration. I wanted to have the simplest way to c
 
 As it turns out, there are many custom rules out there, there are also packages pre made such as StyleCop+, StyleCop Contrib, StyleCopCustomRuleCleanCode.
 
-None of them please me and fulfilled my needs. This project began rather small. As it grew, I had to refactor it. I found myself going from contreate classes
+None of them please me and fulfilled my needs. This project began rather small. As it grew, I had to refactor it. I found myself going from concrete classes
 to static implementation, and used the good ideas I found in available custom rules to create this package. Hence, some things may look similar to what is
 done in other packages, mainly the packages listed above.
 

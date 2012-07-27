@@ -244,4 +244,18 @@ namespace CleanCodersStyleCopRules.Test.Resources
 
         #endregion
     }
+
+    /// <summary>
+    /// The repository.
+    /// </summary>
+    /// <typeparam name="T">
+    /// The class type.
+    /// </typeparam>
+    public class Repository<T> where T : class
+    {
+        /// <summary>
+        /// The some test.
+        /// </summary>
+        private string someTest;
+    }
 }

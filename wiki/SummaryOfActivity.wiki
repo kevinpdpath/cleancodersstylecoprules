@@ -4,7 +4,7 @@
 
 *July 25th, 2012*
 
-Added new rule that validates if the name of a Class, Method, Field, contains the name of its type, hence a class called MyClass would raise a violation.
+Added new rule that validates if the name of a Class, Method, Field, contains the name of its type, hence a class called `MyClass` would raise a violation.
 
 *July 26th, 2012*
 

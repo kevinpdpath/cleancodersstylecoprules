@@ -16,4 +16,4 @@ Bug fix in the NameHasNonEnglishCharacter rule where strongly types class, would
 
 Optimizations to the `ClassContainsTooManyLine`, `MethodContainsTooManyLine` and `PropertyContainsTooManyLine` rules.
 
-Update the Trunk to match StyleCop v4.7.35.0
+Update the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.35.0

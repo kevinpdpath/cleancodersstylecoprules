@@ -62,7 +62,12 @@ namespace CleanCodersStyleCopRules.Rule
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            ProcessName(element, element.Declaration.Name, element.LineNumber, context);
+            if (element.Declaration.Name != null)
+            {
+                string name = Utility.TrimGenericType(element.Declaration.Name);
+
+                ProcessName(element, name, element.LineNumber, context);
+            }
 
             foreach (Field field in element.ChildCodeElements.OfType<Field>().ToList())
             {

@@ -79,7 +79,7 @@ namespace CleanCodersStyleCopRules.Rule
                 return true;
             }
 
-            int numberOfLinesInProperty = lastToken.LineNumber - firstLineNumber;
+            int numberOfLinesInProperty = element.Location.LineSpan;
 
             if (numberOfLinesInProperty > (int)context.AnalyserSetting[RuleSettingName])
             {

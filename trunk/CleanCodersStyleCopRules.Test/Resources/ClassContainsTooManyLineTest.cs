@@ -71,7 +71,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -126,7 +125,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -181,7 +179,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -236,7 +233,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -291,7 +287,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -346,7 +341,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -401,7 +395,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -456,7 +449,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -512,6 +504,14 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 44;
             abc += 45;
             Console.WriteLine(abc);
+        }
+
+        /// <summary>
+        ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
+        /// </summary>
+        public void FiftyLineJ()
+        {
+            Console.WriteLine("hello");
         }
 
         #endregion
@@ -577,7 +577,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -632,7 +631,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -687,7 +685,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -742,7 +739,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -797,7 +793,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -852,7 +847,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -907,7 +901,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -962,7 +955,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 
@@ -1017,7 +1009,15 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
+            Console.WriteLine(abc);
+        }
+
+        /// <summary>
+        ///   Method that is 50 lines long, that includes the squidlies, but exclude the method declatation line.
+        /// </summary>
+        public void FiftyLineJ()
+        {
+            int abc = 0;
             Console.WriteLine(abc);
         }
 

@@ -70,7 +70,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 43;
             abc += 44;
             abc += 45;
-            abc += 46;
             Console.WriteLine(abc);
         }
 

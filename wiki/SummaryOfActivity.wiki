@@ -16,4 +16,6 @@ Bug fix in the `NameHasNonEnglishCharacter` rule where strongly types class, wou
 
 Optimizations to the `ClassContainsTooManyLine`, `MethodContainsTooManyLine` and `PropertyContainsTooManyLine` rules.
 
+Revised the resource test rules to correctly have the right amount of lines in Class, Method and Property to match the rule correctly, as the rule optimization listed above included a fix where the number of lines reported was off by one.
+
 Update the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.35.0

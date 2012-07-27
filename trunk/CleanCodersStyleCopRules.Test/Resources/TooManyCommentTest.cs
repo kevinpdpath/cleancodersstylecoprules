@@ -78,7 +78,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             abc += 42;
             abc += 43;
             abc += 44;
-
             Console.WriteLine(abc);
         }
 
@@ -128,9 +127,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
 
             // Add one more to our variable.
             abc += 13;
-
-            // Add one more to our variable.
-            abc += 14;
 
             Console.WriteLine(abc);
         }

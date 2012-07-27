@@ -70,15 +70,6 @@ namespace CleanCodersStyleCopRules.Rule
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            int firstLineNumber = element.LineNumber;
-
-            CsToken lastToken = element.Tokens.LastOrDefault();
-
-            if (lastToken == null)
-            {
-                return true;
-            }
-
             int numberOfLinesInProperty = element.Location.LineSpan;
 
             if (numberOfLinesInProperty > (int)context.AnalyserSetting[RuleSettingName])

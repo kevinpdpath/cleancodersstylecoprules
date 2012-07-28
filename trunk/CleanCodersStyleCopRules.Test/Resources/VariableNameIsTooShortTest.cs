@@ -55,10 +55,28 @@ namespace CleanCodersStyleCopRules.Test.Resources
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0055:TooManyComment", Justification = "Euh, well, it need a little explaining here.")]
         public void WithTwoErrors(int x, int y)
         {
-            // Variables inside a for loop are accepted, but keep the for loop within 5 lines long.
+            // Variables inside a for loop are accepted, but keep the for loop within 10 lines long.
             for (int z = 0; z < int.MaxValue; z++)
             {
                 Console.WriteLine("Hello there: {0}", z);
+                Console.WriteLine("Hello there: {0}", z);
+                Console.WriteLine("Hello there: {0}", z);
+                Console.WriteLine("Hello there: {0}", z);
+                Console.WriteLine("Hello there: {0}", z);
+                Console.WriteLine("Hello there: {0}", z);
+            }
+
+            for (int k = 0; k < int.MaxValue; k++)
+            {
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}", k);
             }
         }
 

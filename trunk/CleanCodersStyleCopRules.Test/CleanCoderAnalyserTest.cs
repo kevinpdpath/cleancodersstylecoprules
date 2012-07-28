@@ -280,7 +280,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameIsTooShort()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameIsTooShortTest.cs", 4);
+            this.AnalyzeCodeWithAssertion("VariableNameIsTooShortTest.cs", 5);
         }
 
         /// <summary>

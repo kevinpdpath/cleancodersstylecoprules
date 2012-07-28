@@ -80,6 +80,31 @@ namespace CleanCodersStyleCopRules.Rule
                 {
                     ProcessVariableName(element, variable.Name, variable.Location.LineNumber, context);
                 }
+
+                foreach (CsToken token in element.ElementTokens)
+                {
+                    if (token.CsTokenType != CsTokenType.For)
+                    {
+                        continue;
+                    }
+
+                    if (token.Parent.Location.LineSpan < 10)
+                    {
+                        continue;
+                    }
+
+                    ForStatement forStatement = (ForStatement)token.Parent;
+
+                    foreach (Expression expression in forStatement.Initializers.ToList())
+                    {
+                        if (expression.ExpressionType != ExpressionType.VariableDeclaration)
+                        {
+                            continue;
+                        }
+
+                        ProcessVariableName(element, expression.Tokens.ElementAt(2).Text, expression.Location.LineNumber, context);
+                    }
+                }
             }
 
             return true;

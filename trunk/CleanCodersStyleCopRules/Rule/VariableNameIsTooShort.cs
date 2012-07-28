@@ -88,12 +88,17 @@ namespace CleanCodersStyleCopRules.Rule
                         continue;
                     }
 
-                    if (token.Parent.Location.LineSpan < 10)
+                    if (token.Parent != null && token.Parent.Location.LineSpan < 10)
                     {
                         continue;
                     }
 
                     ForStatement forStatement = (ForStatement)token.Parent;
+
+                    if (forStatement == null)
+                    {
+                        continue;
+                    }
 
                     foreach (Expression expression in forStatement.Initializers.ToList())
                     {
@@ -102,7 +107,10 @@ namespace CleanCodersStyleCopRules.Rule
                             continue;
                         }
 
-                        ProcessVariableName(element, expression.Tokens.ElementAt(2).Text, expression.Location.LineNumber, context);
+                        if (expression.Tokens.Count() >= 2)
+                        {
+                            ProcessVariableName(element, expression.Tokens.ElementAt(2).Text, expression.Location.LineNumber, context);
+                        }
                     }
                 }
             }

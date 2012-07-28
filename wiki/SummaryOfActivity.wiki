@@ -19,3 +19,7 @@ Optimizations to the `ClassContainsTooManyLine`, `MethodContainsTooManyLine` and
 Revised the resource test rules to correctly have the right amount of lines in Class, Method and Property to match the rule correctly, as the rule optimization listed above included a fix where the number of lines reported was off by one.
 
 Update the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.35.0
+
+*July 28th, 2012*
+
+Modified the rule `VariableNameIsTooShort`. Before the change, the rule would simple get a list of variables contained inside a method. Effectively, it was allowing the use of a variable too short when defined in a for statement. Now, the variables created in a for statement are looked after, and if the for loop is less than 10 lines, the variable declaration will allow a short name, but if the loop is more than 10 lines, it will raise a violation. Robert C. Martin says in his book 5 line for the for loop, but I felt 10 was better, specially sing 3 of those lines are the for declaration and the two squidlies....

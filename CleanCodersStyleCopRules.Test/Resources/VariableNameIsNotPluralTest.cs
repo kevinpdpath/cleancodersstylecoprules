@@ -9,12 +9,17 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
+
     /// <summary>
-    /// Dummy class to unit test the VariableNameIsNotPlural custom StyleCop rule.
+    ///   Dummy class to unit test the VariableNameIsNotPlural custom StyleCop rule.
     /// </summary>
     public class VariableNameIsNotPluralTest
     {
-        #region Constants and Fields
+        #region Fields
 
         /// <summary>
         ///   The color array.
@@ -24,7 +29,26 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   The array list.
         /// </summary>
-        private System.Collections.ArrayList light;
+        private ArrayList light;
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VariableNameIsNotPluralTest"/> class.
+        /// </summary>
+        /// <param name="color">
+        /// The color.
+        /// </param>
+        /// <param name="light">
+        /// The light.
+        /// </param>
+        public VariableNameIsNotPluralTest(string[] color, ArrayList light)
+        {
+            this.color = color;
+            this.light = light;
+        }
 
         #endregion
 
@@ -34,7 +58,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// Methods with errors.
         /// </summary>
         /// <param name="toto">
-        /// The toto.
+        /// The toto. 
         /// </param>
         public void WithErrors(int[] toto)
         {
@@ -43,37 +67,37 @@ namespace CleanCodersStyleCopRules.Test.Resources
                 int[] gougou;
             }
 
-            System.Collections.ArrayList arrayList;
-            System.Collections.BitArray bitArray;
-            System.Collections.Hashtable hashtable;
-            System.Collections.ICollection collectionInterface;
-            System.Collections.IDictionary dictionaryInterface;
-            System.Collections.IList listInterface;
-            System.Collections.Queue queue;
-            System.Collections.SortedList sortedList;
-            System.Collections.ObjectModel.Collection<int> collectionInt;
-            System.Collections.ObjectModel.KeyedCollection<string, string> keyedCollectionInt;
-            System.Collections.ObjectModel.ReadOnlyCollection<string> readOnlyCollection;
-            System.Collections.Specialized.BitVector32 bitVector32;
-            System.Collections.Specialized.HybridDictionary hybridDictionary;
-            System.Collections.Specialized.IOrderedDictionary orderedDictionaryInterface;
-            System.Collections.Specialized.ListDictionary listDictionary;
-            System.Collections.Specialized.NameValueCollection nameValueCollection;
-            System.Collections.Specialized.OrderedDictionary orderedDictionary;
-            System.Collections.Specialized.StringCollection stringCollection;
-            System.Collections.Specialized.StringDictionary stringDictionary;
-            System.Collections.Generic.Dictionary<string, string> dictionaryGeneric;
-            System.Collections.Generic.HashSet<string> hashSet;
-            System.Collections.Generic.ICollection<string> collectionInterfaceGeneric;
-            System.Collections.Generic.IDictionary<string, string> dictionaryInterfaceGeneric;
-            System.Collections.Generic.IEnumerable<string> enumerableInterfaceGeneric;
-            System.Collections.Generic.IList<string> listInterfaceGeneric;
-            System.Collections.Generic.LinkedList<string> linkeyListGeneric;
-            System.Collections.Generic.List<string> listGeneric;
-            System.Collections.Generic.Queue<string> queueGeneric;
-            System.Collections.Generic.SortedDictionary<string, string> sortedDictionaryGeneric;
-            System.Collections.Generic.SortedList<string, string> sortedListGeneric;
-            System.Collections.Generic.Stack<string> stackGeneric;
+            ArrayList arrayList;
+            BitArray bitArray;
+            Hashtable hashtable;
+            ICollection collectionInterface;
+            IDictionary dictionaryInterface;
+            IList listInterface;
+            Queue queue;
+            SortedList sortedList;
+            Collection<int> collectionInt;
+            KeyedCollection<string, string> keyedCollectionInt;
+            ReadOnlyCollection<string> readOnlyCollection;
+            BitVector32 bitVector32;
+            HybridDictionary hybridDictionary;
+            IOrderedDictionary orderedDictionaryInterface;
+            ListDictionary listDictionary;
+            NameValueCollection nameValueCollection;
+            OrderedDictionary orderedDictionary;
+            StringCollection stringCollection;
+            StringDictionary stringDictionary;
+            Dictionary<string, string> dictionaryGeneric;
+            HashSet<string> hashSet;
+            ICollection<string> collectionInterfaceGeneric;
+            IDictionary<string, string> dictionaryInterfaceGeneric;
+            IEnumerable<string> enumerableInterfaceGeneric;
+            IList<string> listInterfaceGeneric;
+            LinkedList<string> linkeyListGeneric;
+            List<string> listGeneric;
+            Queue<string> queueGeneric;
+            SortedDictionary<string, string> sortedDictionaryGeneric;
+            SortedList<string, string> sortedListGeneric;
+            Stack<string> stackGeneric;
         }
 
         #endregion
@@ -86,14 +110,14 @@ namespace CleanCodersStyleCopRules.Test.Resources
             #region Fields
 
             /// <summary>
-            ///   The array list light.
-            /// </summary>
-            public System.Collections.ArrayList Light;
-
-            /// <summary>
             ///   The array list darkness.
             /// </summary>
-            public System.Collections.ArrayList Darkness;
+            public ArrayList Darkness;
+
+            /// <summary>
+            ///   The array list light.
+            /// </summary>
+            public ArrayList Light;
 
             #endregion
 
@@ -108,7 +132,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
             /// <param name="darkness">
             /// The darkness. 
             /// </param>
-            public SomeContainer(System.Collections.ArrayList light, System.Collections.ArrayList darkness)
+            public SomeContainer(ArrayList light, ArrayList darkness)
             {
                 this.Light = light;
                 this.Darkness = darkness;

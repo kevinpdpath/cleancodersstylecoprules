@@ -9,11 +9,10 @@
 
 namespace CleanCodersStyleCopRules.Rule
 {
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
-
-    using CleanCodersStyleCopRules.Common;
 
     using StyleCop;
     using StyleCop.CSharp;
@@ -26,17 +25,6 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Properties
 
         /// <summary>
-        /// Gets the rule setting name.
-        /// </summary>
-        public static string RuleSettingName
-        {
-            get
-            {
-                return MethodBase.GetCurrentMethod().ReflectedType.Name + "Value";
-            }
-        }
-
-        /// <summary>
         ///   Gets the rule name.
         /// </summary>
         public static string RuleName
@@ -47,12 +35,23 @@ namespace CleanCodersStyleCopRules.Rule
             }
         }
 
+        /// <summary>
+        ///   Gets the rule setting name.
+        /// </summary>
+        public static string RuleSettingName
+        {
+            get
+            {
+                return MethodBase.GetCurrentMethod().ReflectedType.Name + "Value";
+            }
+        }
+
         #endregion
 
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if the the variables of a method or a field is too short  with an element.
+        /// Validate if the parameters of a method or constructor are too short with an element.
         /// </summary>
         /// <param name="element">
         /// The current element. 
@@ -74,31 +73,11 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (element.ElementType == ElementType.Method)
             {
-                Method method = element as Method;
-
-                if (method == null)
-                {
-                    return true;
-                }
-
-                foreach (Parameter parameter in method.Parameters.ToList())
-                {
-                    ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
-                }
+                ProcessParameter(element, ((Method)element).Parameters.ToList(), context);
             }
             else if (element.ElementType == ElementType.Constructor)
             {
-                Constructor constructor = element as Constructor;
-
-                if (constructor == null)
-                {
-                    return true;
-                }
-
-                foreach (Parameter parameter in constructor.Parameters.ToList())
-                {
-                    ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
-                }
+                ProcessParameter(element, ((Constructor)element).Parameters.ToList(), context);
             }
 
             return true;
@@ -107,9 +86,6 @@ namespace CleanCodersStyleCopRules.Rule
         /// <summary>
         /// Validate if a variable name is too short with an expression.
         /// </summary>
-        /// <remarks>
-        /// The variable declarator catches all 
-        /// </remarks>
         /// <param name="expression">
         /// The expression. 
         /// </param>
@@ -153,14 +129,38 @@ namespace CleanCodersStyleCopRules.Rule
 
             ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, expression.Location.LineNumber, context);
 
-             return true;
+            return true;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Process the parameter of a method or a constructor.
+        /// </summary>
+        /// <param name="element">
+        /// The element. 
+        /// </param>
+        /// <param name="parameters">
+        /// The parameters. 
+        /// </param>
+        /// <param name="context">
+        /// The context. 
+        /// </param>
+        private static void ProcessParameter(CsElement element, IEnumerable<Parameter> parameters, CleanCoderAnalyzer context)
+        {
+            foreach (Parameter parameter in parameters)
+            {
+                ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
+            }
         }
 
         /// <summary>
         /// Validate if a variable name is too short.
         /// </summary>
         /// <param name="element">
-        /// The element.
+        /// The element. 
         /// </param>
         /// <param name="variableName">
         /// The variable name. 

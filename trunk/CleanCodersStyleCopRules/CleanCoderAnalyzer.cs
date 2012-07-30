@@ -177,7 +177,7 @@ namespace CleanCodersStyleCopRules
                 new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameHasUnderscore.ValidateElement });
 
             this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameIsNotPlural.ValidateElement });
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Constructor }, MethodCallback = VariableNameIsNotPlural.ValidateElement });
 
             this.ElementVisitorRegistry.Add(
                 new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Constructor }, MethodCallback = VariableNameIsTooShort.ValidateElement });

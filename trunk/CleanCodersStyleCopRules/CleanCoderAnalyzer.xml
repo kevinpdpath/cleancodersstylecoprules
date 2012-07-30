@@ -80,7 +80,7 @@
       </Rule>
       <Rule Name="VariableNameIsNotPlural" CheckId="CC0019">
         <Context>
-          The variable '{0}' is not plural, yet, it seems to represent a matrix of some kind. Please refactor the variable to make its name plural.
+          The variable '{0}' is not plural, yet, it seems to represent a matrix of some kind. Please refactor the variable so its name is plural.
         </Context>
         <Description>
           Clean Code states that you should always spell your variable with plural when a variable represent a matrix of some kind. (Page 19)

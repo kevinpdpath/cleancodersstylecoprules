@@ -271,7 +271,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameIsNotPlural()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameIsNotPluralTest.cs", 35);
+            this.AnalyzeCodeWithAssertion("VariableNameIsNotPluralTest.cs", 37);
         }
 
         /// <summary>

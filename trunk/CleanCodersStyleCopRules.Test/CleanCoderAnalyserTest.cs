@@ -262,7 +262,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameHasUnderscore()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameHasUnderscoreTest.cs", 5);
+            this.AnalyzeCodeWithAssertion("VariableNameHasUnderscoreTest.cs", 9);
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameIsNotPlural()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameIsNotPluralTest.cs", 37);
+            this.AnalyzeCodeWithAssertion("VariableNameIsNotPluralTest.cs", 39);
         }
 
         /// <summary>

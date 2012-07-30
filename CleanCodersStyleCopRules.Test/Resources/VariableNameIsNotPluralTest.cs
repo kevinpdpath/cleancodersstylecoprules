@@ -33,7 +33,10 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         /// Methods with errors.
         /// </summary>
-        public void WithErrors()
+        /// <param name="toto">
+        /// The toto.
+        /// </param>
+        public void WithErrors(int[] toto)
         {
             int[] gougou;
             System.Collections.ArrayList arrayList;

@@ -82,19 +82,24 @@ namespace CleanCodersStyleCopRules.Test.Resources
         }
 
         /// <summary>
-        /// Methods definition with three error.
+        /// Methods definition with many error.
         /// </summary>
         /// <param name="intAge">
         /// The parameter intAge.
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0301:VariableTypeIsNotExplicit", Justification = "It's for a test.")]
-        public void WithThreeErrors(int intAge)
+        public void WithManyErrors(int intAge)
         {
             string colorName;
 
             string strColorName;
 
             DateTime vntDate = DateTime.Now;
+
+            for (int intCount = 0; intCount < 100; intCount++)
+            {
+                bool blnFlag = true;
+            }
         }
 
         /// <summary>
@@ -137,16 +142,16 @@ namespace CleanCodersStyleCopRules.Test.Resources
             /// <summary>
             /// Initializes a new instance of the <see cref="Point"/> struct.
             /// </summary>
-            /// <param name="coordinateX">
+            /// <param name="intCoordinateX">
             /// The coordinate X.
             /// </param>
-            /// <param name="coordinateY">
+            /// <param name="intCoordinateY">
             /// The coordinate Y.
             /// </param>
-            public Point(int coordinateX, int coordinateY)
+            public Point(int intCoordinateX, int intCoordinateY)
             {
-                this.CoordinateX = coordinateX;
-                this.CoordinateY = coordinateY;
+                this.CoordinateX = intCoordinateX;
+                this.CoordinateY = intCoordinateY;
             }
 
             #endregion

@@ -56,6 +56,16 @@ namespace CleanCodersStyleCopRules.Test.Resources
             const string LOCALSCREAMINGCAPS = "abc";
 
             const string LOCAL_CONSTANTALL_CAPS_AGAIN = "abc";
+
+            if (true)
+            {
+                const string TTTTUUUU = "abc;";
+
+                for (int i = 0; i < 10; i++)
+                {
+                    const string EEEERRRR = "abc";
+                }
+            }
         }
 
         #endregion

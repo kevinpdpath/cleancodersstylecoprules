@@ -41,7 +41,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if the the variables of a method or a field is not plural.
+        /// Validate if the the parameters of a method are not plural with an element.
         /// </summary>
         /// <param name="element">
         /// The current element. 
@@ -56,25 +56,76 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            if (element.ElementType == ElementType.Field)
+            if (element.ElementType == ElementType.Method)
             {
-                ProcessVariableName(element, element.Declaration.Name, ((Field)element).FieldType.Text, element.LineNumber, context);
-            }
-            else if (element.ElementType == ElementType.Method)
-            {
-                foreach (Variable variable in element.Variables.ToList())
+                Method method = element as Method;
+
+                if (method == null)
                 {
-                    ProcessVariableName(element, variable.Name, variable.Type.Text, variable.Location.LineNumber, context);
+                    return true;
+                }
+
+                foreach (Parameter parameter in method.Parameters.ToList())
+                {
+                    ProcessVariableName(element, parameter.Name, parameter.Type.Text, parameter.LineNumber, context);
                 }
             }
 
             return true;
         }
+
+        /// <summary>
+        /// Validate if the the variables of a method or a field is not plural with an expression.
+        /// </summary>
+        /// <remarks>
+        /// The variable declarator catches all
+        /// </remarks>
+        /// <param name="expression">
+        /// The expression. 
+        /// </param>
+        /// <param name="parentExpression">
+        /// The parent expression. 
+        /// </param>
+        /// <param name="parentStatement">
+        /// The parent statement. 
+        /// </param>
+        /// <param name="parentElement">
+        /// The parent element. 
+        /// </param>
+        /// <param name="context">
+        /// The context, this class. 
+        /// </param>
+        /// <returns>
+        /// True if all visited expressions are valid, False otherwise. 
+        /// </returns>
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
+        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        {
+            if (expression.ExpressionType != ExpressionType.VariableDeclarator)
+            {
+                return true;
+            }
+
+            VariableDeclaratorExpression variableDeclaratorExpression = expression as VariableDeclaratorExpression;
+
+            if (variableDeclaratorExpression == null)
+            {
+                return true;
+            }
+
+            ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, variableDeclaratorExpression.ParentVariable.Type.Text, expression.Location.LineNumber, context);
+
+            return true;
+        }
+
+        #endregion
+
+        #region Methods
 
         /// <summary>
         /// Validate if a variable name is not plural.
@@ -83,13 +134,13 @@ namespace CleanCodersStyleCopRules.Rule
         /// In English, we say a plural ends with S, and in French, it could be S or X.
         /// </remarks>
         /// <param name="element">
-        /// The element.
+        /// The element. 
         /// </param>
         /// <param name="variableName">
         /// The variable name. 
         /// </param>
         /// <param name="variableTypeDefinition">
-        /// The variable type definition.
+        /// The variable type definition. 
         /// </param>
         /// <param name="lineNumber">
         /// The line number where the variable apperas. 

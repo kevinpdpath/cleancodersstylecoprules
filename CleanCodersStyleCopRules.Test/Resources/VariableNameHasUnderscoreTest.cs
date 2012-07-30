@@ -9,6 +9,9 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System;
+    using System.Globalization;
+
     /// <summary>
     ///   Dummy class to unit test the VariableNameHasUnderscore custom StyleCop rule.
     /// </summary>
@@ -36,7 +39,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         }
 
         /// <summary>
-        /// Methods definition with two errors.
+        /// Methods definition with many errors.
         /// </summary>
         /// <param name="age">
         /// The parameter age.
@@ -44,9 +47,14 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <param name="year_of_birth">
         /// The parameter year_of_birth.
         /// </param>
-        public void WithTwoErrors(int age, int year_of_birth)
+        public void WithManyErrors(int age, int year_of_birth)
         {
             string color_name;
+
+            for (int cone_number = 0; cone_number < 100; cone_number++)
+            {
+                Console.WriteLine("Hello {0}", cone_number.ToString(CultureInfo.InvariantCulture));
+            }
         }
 
         #endregion

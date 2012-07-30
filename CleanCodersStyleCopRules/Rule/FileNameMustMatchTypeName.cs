@@ -42,7 +42,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if a the file name matches the type name it contains.
+        /// Validate if a the file name matches the type name it contains with an element.
         /// </summary>
         /// <param name="element">
         /// The current element. 
@@ -57,7 +57,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");

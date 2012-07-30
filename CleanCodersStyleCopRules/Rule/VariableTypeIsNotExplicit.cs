@@ -39,10 +39,19 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if the the variables of a method or a field is not explicitly defined.
+        /// Validate if a variable name not explicitely defined with an expression.
         /// </summary>
-        /// <param name="element">
-        /// The current element. 
+        /// <remarks>
+        /// The variable declarator catches all 
+        /// </remarks>
+        /// <param name="expression">
+        /// The expression. 
+        /// </param>
+        /// <param name="parentExpression">
+        /// The parent expression. 
+        /// </param>
+        /// <param name="parentStatement">
+        /// The parent statement. 
         /// </param>
         /// <param name="parentElement">
         /// The parent element. 
@@ -51,25 +60,30 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context, this class. 
         /// </param>
         /// <returns>
-        /// Returns true to continue, false to stop visiting the elements in the code document. 
+        /// True if all visited expressions are valid, False otherwise. 
         /// </returns>
-        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
+        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
-            Param.AssertNotNull(element, "element");
-            Param.AssertNotNull(context, "context");
-
-            foreach (Variable variable in element.Variables.ToList())
+            if (expression.ExpressionType != ExpressionType.VariableDeclarator)
             {
-                if (variable.Type.Text.Equals("var"))
-                {
-                    context.AddViolation(element, variable.Location.LineNumber, RuleName, variable.Name);
-                }
+                return true;
+            }
+
+            VariableDeclaratorExpression variableDeclaratorExpression = expression as VariableDeclaratorExpression;
+
+            if (variableDeclaratorExpression == null)
+            {
+                return true;
+            }
+
+            if (variableDeclaratorExpression.ParentVariable.Type.Text.Equals("var"))
+            {
+                context.AddViolation(parentElement, expression.Location.LineNumber, RuleName, variableDeclaratorExpression.Identifier.Text);
             }
 
             return true;
         }
-
         #endregion
     }
 }

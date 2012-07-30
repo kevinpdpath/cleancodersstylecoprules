@@ -23,6 +23,19 @@ namespace CleanCodersStyleCopRules.Test.Resources
         {
             if (true)
             {
+                if (true)
+                {
+                    if (true)
+                    {
+                        if (true)
+                        {
+                        }
+
+                        if (true)
+                        {
+                        }
+                    }
+                }
             }
 
             while (true)
@@ -31,5 +44,12 @@ namespace CleanCodersStyleCopRules.Test.Resources
         }
 
         #endregion
+    }
+
+    /// <summary>
+    /// The Something interface.
+    /// </summary>
+    public interface ISomething
+    {
     }
 }

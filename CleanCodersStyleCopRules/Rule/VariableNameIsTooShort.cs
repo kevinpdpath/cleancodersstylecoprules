@@ -13,6 +13,8 @@ namespace CleanCodersStyleCopRules.Rule
     using System.Linq;
     using System.Reflection;
 
+    using CleanCodersStyleCopRules.Common;
+
     using StyleCop;
     using StyleCop.CSharp;
 
@@ -50,7 +52,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if the the variables of a method or a field is too short.
+        /// Validate if the the variables of a method or a field is too short  with an element.
         /// </summary>
         /// <param name="element">
         /// The current element. 
@@ -65,57 +67,99 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            if (element.ElementType == ElementType.Field)
+            foreach (Constructor constructor in element.ChildCodeElements.OfType<Constructor>().ToList())
             {
-                ProcessVariableName(element, element.Declaration.Name, element.LineNumber, context);
+                ParseConstructor(constructor, context);
             }
-            else if (element.ElementType == ElementType.Method)
+
+            foreach (Method method in element.ChildCodeElements.OfType<Method>().ToList())
             {
-                foreach (Variable variable in element.Variables.ToList())
+                ParseMethod(method, context);
+            }
+
+            foreach (Struct structObject in element.ChildCodeElements.OfType<Struct>().ToList())
+            {
+                ParseStruct(structObject, context);
+            }
+
+            foreach (Enum enumObject in element.ChildCodeElements.OfType<Enum>().ToList())
+            {
+                ParseEnum(enumObject, context);
+            }
+
+            if (element.ElementType == ElementType.Method)
+            {
+                Method method = element as Method;
+
+                if (method == null)
                 {
-                    ProcessVariableName(element, variable.Name, variable.Location.LineNumber, context);
+                    return true;
                 }
 
-                foreach (CsToken token in element.ElementTokens)
+                foreach (Parameter parameter in method.Parameters.ToList())
                 {
-                    if (token.CsTokenType != CsTokenType.For)
-                    {
-                        continue;
-                    }
-
-                    if (token.Parent != null && token.Parent.Location.LineSpan < 10)
-                    {
-                        continue;
-                    }
-
-                    ForStatement forStatement = (ForStatement)token.Parent;
-
-                    if (forStatement == null)
-                    {
-                        continue;
-                    }
-
-                    foreach (Expression expression in forStatement.Initializers.ToList())
-                    {
-                        if (expression.ExpressionType != ExpressionType.VariableDeclaration)
-                        {
-                            continue;
-                        }
-
-                        if (expression.Tokens.Count() >= 2)
-                        {
-                            ProcessVariableName(element, expression.Tokens.ElementAt(2).Text, expression.Location.LineNumber, context);
-                        }
-                    }
+                    ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
                 }
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Validate if a variable name is too short with an expression.
+        /// </summary>
+        /// <remarks>
+        /// The variable declarator catches all 
+        /// </remarks>
+        /// <param name="expression">
+        /// The expression. 
+        /// </param>
+        /// <param name="parentExpression">
+        /// The parent expression. 
+        /// </param>
+        /// <param name="parentStatement">
+        /// The parent statement. 
+        /// </param>
+        /// <param name="parentElement">
+        /// The parent element. 
+        /// </param>
+        /// <param name="context">
+        /// The context, this class. 
+        /// </param>
+        /// <returns>
+        /// True if all visited expressions are valid, False otherwise. 
+        /// </returns>
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
+        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        {
+            if (expression.ExpressionType != ExpressionType.VariableDeclarator)
+            {
+                return true;
+            }
+
+            VariableDeclaratorExpression variableDeclaratorExpression = expression as VariableDeclaratorExpression;
+
+            if (variableDeclaratorExpression == null)
+            {
+                return true;
+            }
+
+            if (parentStatement.StatementType == StatementType.For)
+            {
+                if (parentStatement.Location.LineSpan < 10)
+                {
+                    return true;
+                }
+            }
+
+            ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, expression.Location.LineNumber, context);
+
+             return true;
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if an expression has negative conditional.
+        /// Validate if an expression has negative conditional with an expression.
         /// </summary>
         /// <param name="expression">
         /// The expression.
@@ -59,7 +59,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document.
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitExpression.")]
-        public static bool Validate(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(expression, "expression");
             Param.AssertNotNull(parentStatement, "parentStatement");

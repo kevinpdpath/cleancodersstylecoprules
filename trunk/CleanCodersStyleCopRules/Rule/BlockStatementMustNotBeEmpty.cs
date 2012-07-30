@@ -38,7 +38,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if a a block statement is empty.
+        /// Validate if a a block statement is empty with a statement.
         /// </summary>
         /// <param name="statement">
         /// The current element. 
@@ -59,7 +59,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitStatement.")]
-        public static bool Validate(Statement statement, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        public static bool ValidateStatement(Statement statement, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(statement, "statement");
             Param.AssertNotNull(parentElement, "parentElement");

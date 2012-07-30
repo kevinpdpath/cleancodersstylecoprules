@@ -100,90 +100,87 @@ namespace CleanCodersStyleCopRules
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0034:MethodContainsTooManyLine", Justification = "No choice, all rules must be registered.")]
         public void RegisterElementVisitorRule()
         {
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Class }, MethodCallback = ClassContainsTooManyLine.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Class }, MethodCallback = ClassContainsTooManyLine.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Class }, MethodCallback = ClassContainsTooManyMethod.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Class }, MethodCallback = ClassContainsTooManyMethod.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Class }, MethodCallback = ClassNameHasTooManyWord.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Class }, MethodCallback = ClassNameHasTooManyWord.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(
+                new ElementVisitorContainer
+                {
+                    ElementTypes = new List<ElementType>
+                                        {
+                                            ElementType.Enum,
+                                            ElementType.EnumItem,
+                                            ElementType.Class,
+                                            ElementType.Interface,
+                                            ElementType.Method,
+                                            ElementType.Struct,
+                                            ElementType.Field,
+                                            ElementType.Property
+                                        },
+                    MethodCallback = DescriptiveNameTooExplicit.ValidateElement
+                });
 
             this.ElementVisitorRegistry.Add(
                 new ElementVisitorContainer
                     {
-                       ElementTypes = new List<ElementType> { ElementType.Class, ElementType.Struct, ElementType.Interface }, MethodCallback = FileNameMustMatchTypeName.Validate
+                       ElementTypes = new List<ElementType> { ElementType.Class, ElementType.Struct, ElementType.Interface }, MethodCallback = FileNameMustMatchTypeName.ValidateElement
                     });
 
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodContainsTooManyLine.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Root }, MethodCallback = LineContainsTrainWreck.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Root }, MethodCallback = LineHasTrailingSpace.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Root }, MethodCallback = LineIsTooLong.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodContainsGotoStatement.ValidateElement });
 
             this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameHasHungarianPrefix.Validate });
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodContainsSwitchStatement.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameHasUnderscore.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodContainsTooManyLine.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameIsTooShort.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodHasBooleanParameter.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameIsNotPlural.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodHasOutputParameter.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = VariableTypeIsNotExplicit.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodHasTooManyArgument.ValidateElement });
 
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodHasTooManyArgument.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodHasOutputParameter.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodHasBooleanParameter.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodContainsSwitchStatement.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodContainsGotoStatement.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Root }, MethodCallback = LineIsTooLong.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Root }, MethodCallback = LineContainsTrainWreck.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Root }, MethodCallback = LineHasTrailingSpace.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Property }, MethodCallback = PropertyContainsTooManyLine.Validate });
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodNameHasTooManyWord.ValidateElement });
 
             this.ElementVisitorRegistry.Add(
                 new ElementVisitorContainer
-                    {
-                        ElementTypes =
-                            new List<ElementType>
-                                {
-                                    ElementType.Namespace,
-                                    ElementType.Class,
-                                    ElementType.Enum,
-                                    ElementType.Interface,
-                                    ElementType.Struct,
-                                },
-                        MethodCallback = NameHasNonEnglishCharacter.Validate
-                    });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = TooManyComment.Validate });
-
-            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = MethodNameHasTooManyWord.Validate });
+                {
+                    ElementTypes =
+                        new List<ElementType>
+                                            {
+                                                ElementType.Namespace,
+                                                ElementType.Class,
+                                                ElementType.Enum,
+                                                ElementType.Interface,
+                                                ElementType.Struct,
+                                            },
+                    MethodCallback = NameHasNonEnglishCharacter.Validate
+                });
 
             this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer
-                    {
-                        ElementTypes = new List<ElementType>
-                            {
-                                ElementType.Enum,
-                                ElementType.EnumItem,
-                                ElementType.Class,
-                                ElementType.Interface,
-                                ElementType.Method,
-                                ElementType.Struct,
-                                ElementType.Field,
-                                ElementType.Property
-                            }, 
-                            MethodCallback = DescriptiveNameTooExplicit.Validate
-                    });
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Property }, MethodCallback = PropertyContainsTooManyLine.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = TooManyComment.ValidateElement });
 
             this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Field, ElementType.Method }, MethodCallback = ConstantIsNotPascalCase.Validate });
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Struct }, MethodCallback = VariableNameHasHungarianPrefix.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameHasUnderscore.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameIsNotPlural.ValidateElement });
+
+            this.ElementVisitorRegistry.Add(
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = VariableNameIsTooShort.ValidateElement });
         }
 
         /// <summary>
@@ -192,7 +189,25 @@ namespace CleanCodersStyleCopRules
         public void RegisterExpressionVisitorRule()
         {
             this.ExpressionVisitorRegistry.Add(
-                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.Unary }, MethodCallback = ExpressionHasNegativeConditional.Validate });
+                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.Unary }, MethodCallback = ExpressionHasNegativeConditional.ValidateExpression });
+
+            this.ExpressionVisitorRegistry.Add(
+                new ExpressionVisitorContainer
+                    {
+                        ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = VariableNameHasHungarianPrefix.ValidateExpression
+                    });
+
+            this.ExpressionVisitorRegistry.Add(
+                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = VariableNameHasUnderscore.ValidateExpression });
+
+            this.ExpressionVisitorRegistry.Add(
+                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = VariableNameIsTooShort.ValidateExpression });
+
+            this.ExpressionVisitorRegistry.Add(
+                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = VariableNameIsNotPlural.ValidateExpression });
+
+            this.ExpressionVisitorRegistry.Add(
+                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = VariableTypeIsNotExplicit.ValidateExpression });
         }
 
         /// <summary>
@@ -201,7 +216,10 @@ namespace CleanCodersStyleCopRules
         public void RegisterStatementVisitorRule()
         {
             this.StatementVisitorRegistry.Add(
-                new StatementVisitorContainer { StatementTypes = new List<StatementType> { StatementType.Block }, MethodCallback = BlockStatementMustNotBeEmpty.Validate });
+                new StatementVisitorContainer { StatementTypes = new List<StatementType> { StatementType.Block }, MethodCallback = BlockStatementMustNotBeEmpty.ValidateStatement });
+
+            this.StatementVisitorRegistry.Add(
+                new StatementVisitorContainer { StatementTypes = new List<StatementType> { StatementType.VariableDeclaration }, MethodCallback = ConstantIsNotPascalCase.ValidateStatement });
         }
 
         #endregion

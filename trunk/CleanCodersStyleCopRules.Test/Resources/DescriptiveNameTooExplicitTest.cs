@@ -74,7 +74,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// <summary>
         ///   The enum choice 2.
         /// </summary>
-        EnumChoice2, 
+        EnumItemChoice2, 
 
         /// <summary>
         ///   The choice 3.

@@ -40,10 +40,16 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if a constant is not following the PascalCase convention.
+        /// Validate if a constant is not following the PascalCase convention with a statement.
         /// </summary>
-        /// <param name="element">
-        /// The current element. 
+        /// <param name="statement">
+        /// The statement. 
+        /// </param>
+        /// <param name="parentExpression">
+        /// The parent expression. 
+        /// </param>
+        /// <param name="parentStatement">
+        /// The parent statement. 
         /// </param>
         /// <param name="parentElement">
         /// The parent element. 
@@ -52,28 +58,33 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context, this class. 
         /// </param>
         /// <returns>
-        /// Returns true to continue, false to stop visiting the elements in the code document. 
+        /// True if all visited statements are valid, False otherwise. 
         /// </returns>
-        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
+        public static bool ValidateStatement(Statement statement, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
-            Param.AssertNotNull(element, "element");
-            Param.AssertNotNull(context, "context");
-
-            if (element.ElementType == ElementType.Field)
+            if (statement.StatementType != StatementType.VariableDeclaration)
             {
-                Field field = element as Field;
+                return true;
+            }
 
-                if (field == null || field.Const == false)
+            VariableDeclarationStatement variableDeclarationStatement = statement as VariableDeclarationStatement;
+
+            if (variableDeclarationStatement == null)
+            {
+                return true;
+            }
+
+            if (variableDeclarationStatement.Constant)
+            {
+                VariableDeclaratorExpression variableDeclaratorExpression = variableDeclarationStatement.Declarators.First();
+
+                if (variableDeclaratorExpression == null)
                 {
                     return true;
                 }
 
-                ProcessName(element, field.Declaration.Name, field.LineNumber, context);
-            }
-            else if (element.ElementType == ElementType.Method)
-            {
-                ParseMethod(element as Method, context);
+                ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, statement.LineNumber, context);
             }
 
             return true;
@@ -82,38 +93,6 @@ namespace CleanCodersStyleCopRules.Rule
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// Parse method to validate the constants it may contain.
-        /// </summary>
-        /// <param name="method">
-        /// The method. 
-        /// </param>
-        /// <param name="context">
-        /// The context. 
-        /// </param>
-        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
-        private static void ParseMethod(Method method, CleanCoderAnalyzer context)
-        {
-            foreach (Variable variable in method.Variables.ToList())
-            {
-                Statement parentStatement = variable.FindParentStatement();
-
-                if (parentStatement == null)
-                {
-                    continue;
-                }
-
-                CsToken firstToken = parentStatement.Tokens.FirstOrDefault();
-
-                if (firstToken == null || firstToken.Text.Equals("const") == false)
-                {
-                    continue;
-                }
-
-                ProcessName(method, variable.Name, variable.LineNumber, context);
-            }
-        }
 
         /// <summary>
         /// Validate if a constant is not following the PascalCase convention.
@@ -131,7 +110,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context, this class. 
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        private static void ProcessName(CsElement element, string name, int lineNumber, CleanCoderAnalyzer context)
+        private static void ProcessVariableName(CsElement element, string name, int lineNumber, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(name, "name");

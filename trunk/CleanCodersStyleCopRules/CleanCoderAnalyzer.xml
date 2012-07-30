@@ -248,7 +248,7 @@
       </Rule>
       <Rule Name="DescriptiveNameTooExplicit" CheckId="CC0309">
         <Context>
-          The name '{0}' is contains the word '{1}'. You are being too explicit. Please refactor the name to not include the word '{1}'.
+          The name '{0}' is contains the word '{1}'. You are explicit in the wrong way. Please refactor the name to not include the word '{1}'.
         </Context>
         <Description>
           Clean Code states that we need to choose descriptive names. You do not need to include the type of element the name, it is rather overkill and useless. (Page 309)

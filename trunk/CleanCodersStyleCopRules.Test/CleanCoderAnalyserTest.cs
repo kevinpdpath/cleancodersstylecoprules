@@ -28,7 +28,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void BlockStatementMustNotBeEmpty()
         {
-            this.AnalyzeCodeWithAssertion("BlockStatementMustNotBeEmptyTest.cs", 2);
+            this.AnalyzeCodeWithAssertion("BlockStatementMustNotBeEmptyTest.cs", 3);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void ConstantIsNotPascalCase()
         {
-            this.AnalyzeCodeWithAssertion("ConstantIsNotPascalCaseTest.cs", 6);
+            this.AnalyzeCodeWithAssertion("ConstantIsNotPascalCaseTest.cs", 8);
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameHasHungarianPrefix()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameHasHungarianPrefixTest.cs", 13);
+            this.AnalyzeCodeWithAssertion("VariableNameHasHungarianPrefixTest.cs", 17);
         }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameHasUnderscore()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameHasUnderscoreTest.cs", 4);
+            this.AnalyzeCodeWithAssertion("VariableNameHasUnderscoreTest.cs", 5);
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameIsNotPlural()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameIsNotPluralTest.cs", 34);
+            this.AnalyzeCodeWithAssertion("VariableNameIsNotPluralTest.cs", 35);
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameIsTooShort()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameIsTooShortTest.cs", 5);
+            this.AnalyzeCodeWithAssertion("VariableNameIsTooShortTest.cs", 9);
         }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableTypeIsNotExplicit()
         {
-            this.AnalyzeCodeWithAssertion("VariableTypeIsNotExplicitTest.cs", 1);
+            this.AnalyzeCodeWithAssertion("VariableTypeIsNotExplicitTest.cs", 5);
         }
 
         #endregion

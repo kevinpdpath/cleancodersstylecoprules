@@ -52,7 +52,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if a code line, including comment, is too long.
+        /// Validate if a code line, including comment, is too long with an element.
         /// </summary>
         /// <param name="element">
         /// The current element. 
@@ -67,7 +67,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
@@ -81,11 +81,11 @@ namespace CleanCodersStyleCopRules.Rule
 
             List<string> lines = Utility.SplitSourceCodeInLine(documentRoot.Document.SourceCode);
 
-            for (int i = 0; i < lines.Count; i++)
+            for (int lineOffset = 0; lineOffset < lines.Count; lineOffset++)
             {
-                int currentLineNumber = i + 1;
+                int currentLineNumber = lineOffset + 1;
 
-                string currentLine = lines[i];
+                string currentLine = lines[lineOffset];
 
                 if (currentLine.Length > (int)context.AnalyserSetting[RuleSettingName])
                 {

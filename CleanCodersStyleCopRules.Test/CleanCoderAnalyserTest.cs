@@ -253,7 +253,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void VariableNameHasHungarianPrefix()
         {
-            this.AnalyzeCodeWithAssertion("VariableNameHasHungarianPrefixTest.cs", 17);
+            this.AnalyzeCodeWithAssertion("VariableNameHasHungarianPrefixTest.cs", 18);
         }
 
         /// <summary>

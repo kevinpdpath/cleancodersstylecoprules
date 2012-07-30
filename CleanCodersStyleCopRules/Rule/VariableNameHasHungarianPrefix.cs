@@ -53,7 +53,7 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if the the parameters of a method has an hungarian prefix with an element.
+        /// Validate if the parameters of a method or constructor contain an hungarian prefix with an element.
         /// </summary>
         /// <param name="element">
         /// The current element. 
@@ -75,17 +75,11 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (element.ElementType == ElementType.Method)
             {
-                Method method = element as Method;
-
-                if (method == null)
-                {
-                    return true;
-                }
-
-                foreach (Parameter parameter in method.Parameters.ToList())
-                {
-                    ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
-                }
+                ProcessParameter(element, ((Method)element).Parameters.ToList(), context);
+            }
+            else if (element.ElementType == ElementType.Constructor)
+            {
+                ProcessParameter(element, ((Constructor)element).Parameters.ToList(), context);
             }
 
             return true;
@@ -135,6 +129,26 @@ namespace CleanCodersStyleCopRules.Rule
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// Process the parameter of a method or a constructor.
+        /// </summary>
+        /// <param name="element">
+        /// The element. 
+        /// </param>
+        /// <param name="parameters">
+        /// The parameters. 
+        /// </param>
+        /// <param name="context">
+        /// The context. 
+        /// </param>
+        private static void ProcessParameter(CsElement element, IEnumerable<Parameter> parameters, CleanCoderAnalyzer context)
+        {
+            foreach (Parameter parameter in parameters)
+            {
+                ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
+            }
+        }
 
         /// <summary>
         /// Validate if a variable has an hungarian prefix.

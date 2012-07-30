@@ -66,26 +66,28 @@ namespace CleanCodersStyleCopRules.Test.Resources
 
         #endregion
 
-        #region Public Methods and Operators
+        #region Constructors and Destructors
 
         /// <summary>
-        /// Methods definition with one error.
+        /// Initializes a new instance of the <see cref="VariableNameHasHungarianPrefixTest"/> class.
         /// </summary>
-        /// <param name="lastName">
-        /// The parameter lastName.
+        /// <param name="strFirstName">
+        /// The str first name.
         /// </param>
-        /// <param name="strSurName">
-        /// The parameter strSurName.
-        /// </param>
-        public void WithOneErrors(int lastName, int strSurName)
+        public VariableNameHasHungarianPrefixTest(string strFirstName)
         {
+            this.strFirstName = strFirstName;
         }
+
+        #endregion
+
+        #region Public Methods and Operators
 
         /// <summary>
         /// Methods definition with many error.
         /// </summary>
         /// <param name="intAge">
-        /// The parameter intAge.
+        /// The parameter intAge. 
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0301:VariableTypeIsNotExplicit", Justification = "It's for a test.")]
         public void WithManyErrors(int intAge)
@@ -103,13 +105,26 @@ namespace CleanCodersStyleCopRules.Test.Resources
         }
 
         /// <summary>
+        /// Methods definition with one error.
+        /// </summary>
+        /// <param name="lastName">
+        /// The parameter lastName. 
+        /// </param>
+        /// <param name="strSurName">
+        /// The parameter strSurName. 
+        /// </param>
+        public void WithOneErrors(int lastName, int strSurName)
+        {
+        }
+
+        /// <summary>
         /// Methods without errors.
         /// </summary>
         /// <param name="abc">
-        /// The parameter abc.
+        /// The parameter abc. 
         /// </param>
         /// <param name="def">
-        /// The parameter def.
+        /// The parameter def. 
         /// </param>
         public void WithoutErrors(int abc, int def)
         {
@@ -143,10 +158,10 @@ namespace CleanCodersStyleCopRules.Test.Resources
             /// Initializes a new instance of the <see cref="Point"/> struct.
             /// </summary>
             /// <param name="intCoordinateX">
-            /// The coordinate X.
+            /// The coordinate X. 
             /// </param>
             /// <param name="intCoordinateY">
-            /// The coordinate Y.
+            /// The coordinate Y. 
             /// </param>
             public Point(int intCoordinateX, int intCoordinateY)
             {

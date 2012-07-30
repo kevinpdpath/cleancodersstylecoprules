@@ -72,26 +72,6 @@ namespace CleanCodersStyleCopRules.Rule
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            foreach (Constructor constructor in element.ChildCodeElements.OfType<Constructor>().ToList())
-            {
-                ParseConstructor(constructor, context);
-            }
-
-            foreach (Method method in element.ChildCodeElements.OfType<Method>().ToList())
-            {
-                ParseMethod(method, context);
-            }
-
-            foreach (Struct structObject in element.ChildCodeElements.OfType<Struct>().ToList())
-            {
-                ParseStruct(structObject, context);
-            }
-
-            foreach (Enum enumObject in element.ChildCodeElements.OfType<Enum>().ToList())
-            {
-                ParseEnum(enumObject, context);
-            }
-
             if (element.ElementType == ElementType.Method)
             {
                 Method method = element as Method;
@@ -102,6 +82,20 @@ namespace CleanCodersStyleCopRules.Rule
                 }
 
                 foreach (Parameter parameter in method.Parameters.ToList())
+                {
+                    ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
+                }
+            }
+            else if (element.ElementType == ElementType.Constructor)
+            {
+                Constructor constructor = element as Constructor;
+
+                if (constructor == null)
+                {
+                    return true;
+                }
+
+                foreach (Parameter parameter in constructor.Parameters.ToList())
                 {
                     ProcessVariableName(element, parameter.Name, parameter.LineNumber, context);
                 }

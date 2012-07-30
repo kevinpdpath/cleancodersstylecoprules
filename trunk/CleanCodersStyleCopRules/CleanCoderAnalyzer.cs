@@ -180,7 +180,7 @@ namespace CleanCodersStyleCopRules
                 new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Field }, MethodCallback = VariableNameIsNotPlural.ValidateElement });
 
             this.ElementVisitorRegistry.Add(
-                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method }, MethodCallback = VariableNameIsTooShort.ValidateElement });
+                new ElementVisitorContainer { ElementTypes = new List<ElementType> { ElementType.Method, ElementType.Constructor }, MethodCallback = VariableNameIsTooShort.ValidateElement });
         }
 
         /// <summary>

@@ -10,10 +10,8 @@
 namespace CleanCodersStyleCopRules.Rule
 {
     using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
     using System.Reflection;
 
-    using StyleCop;
     using StyleCop.CSharp;
 
     /// <summary>
@@ -39,11 +37,8 @@ namespace CleanCodersStyleCopRules.Rule
         #region Public Methods and Operators
 
         /// <summary>
-        /// Validate if a variable name not explicitely defined with an expression.
+        /// Validate if a variable type not explicitly defined with an expression.
         /// </summary>
-        /// <remarks>
-        /// The variable declarator catches all 
-        /// </remarks>
         /// <param name="expression">
         /// The expression. 
         /// </param>
@@ -84,6 +79,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             return true;
         }
+
         #endregion
     }
 }

@@ -38,7 +38,11 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// </param>
         public void WithErrors(int[] toto)
         {
-            int[] gougou;
+            for (int i = 0; i < 10; i++)
+            {
+                int[] gougou;
+            }
+
             System.Collections.ArrayList arrayList;
             System.Collections.BitArray bitArray;
             System.Collections.Hashtable hashtable;
@@ -73,5 +77,44 @@ namespace CleanCodersStyleCopRules.Test.Resources
         }
 
         #endregion
+
+        /// <summary>
+        ///   The some container.
+        /// </summary>
+        public struct SomeContainer
+        {
+            #region Fields
+
+            /// <summary>
+            ///   The array list light.
+            /// </summary>
+            public System.Collections.ArrayList Light;
+
+            /// <summary>
+            ///   The array list darkness.
+            /// </summary>
+            public System.Collections.ArrayList Darkness;
+
+            #endregion
+
+            #region Constructors and Destructors
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="SomeContainer"/> struct.
+            /// </summary>
+            /// <param name="light">
+            /// The light. 
+            /// </param>
+            /// <param name="darkness">
+            /// The darkness. 
+            /// </param>
+            public SomeContainer(System.Collections.ArrayList light, System.Collections.ArrayList darkness)
+            {
+                this.Light = light;
+                this.Darkness = darkness;
+            }
+
+            #endregion
+        }
     }
 }

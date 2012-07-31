@@ -244,7 +244,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void TooManyComment()
         {
-            this.AnalyzeCodeWithAssertion("TooManyCommentTest.cs", 1);
+            this.AnalyzeCodeWithAssertion("TooManyCommentTest.cs", 4);
         }
 
         /// <summary>

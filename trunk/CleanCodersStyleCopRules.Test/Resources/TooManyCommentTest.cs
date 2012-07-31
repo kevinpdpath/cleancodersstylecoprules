@@ -16,10 +16,58 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// </summary>
     public class TooManyCommentTest
     {
+        #region Fields
+
+        /// <summary>
+        /// The flag.
+        /// </summary>
+        private bool flag;
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        ///   Initializes a new instance of the <see cref="TooManyCommentTest" /> class.
+        /// </summary>
+        public TooManyCommentTest()
+        {
+            // A comment.
+            Console.WriteLine("Hello world!");
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        ///   Gets or sets a value indicating whether flag.
+        /// </summary>
+        public bool Flag
+        {
+            get
+            {
+                Console.WriteLine("Hello world!");
+
+                // The get;
+                return this.flag;
+            }
+
+            set
+            {
+                Console.WriteLine("Hello world!");
+
+                // The set;
+                this.flag = value;
+            }
+        }
+
+        #endregion
+
         #region Public Methods and Operators
 
         /// <summary>
-        /// The no comment.
+        ///   The no comment.
         /// </summary>
         public void NoComment()
         {
@@ -28,7 +76,57 @@ namespace CleanCodersStyleCopRules.Test.Resources
         }
 
         /// <summary>
-        /// The one comment.
+        ///   The noise comment.
+        /// </summary>
+        public void NoiseComment()
+        {
+            // Initialize our variable.
+            int abc = 0;
+
+            // Add one more to our variable.
+            abc += 1;
+
+            // Add one more to our variable.
+            abc += 2;
+
+            // Add one more to our variable.
+            abc += 3;
+
+            // Add one more to our variable.
+            abc += 4;
+
+            // Add one more to our variable.
+            abc += 5;
+
+            // Add one more to our variable.
+            abc += 6;
+
+            // Add one more to our variable.
+            abc += 7;
+
+            // Add one more to our variable.
+            abc += 8;
+
+            // Add one more to our variable.
+            abc += 9;
+
+            // Add one more to our variable.
+            abc += 10;
+
+            // Add one more to our variable.
+            abc += 11;
+
+            // Add one more to our variable.
+            abc += 12;
+
+            // Add one more to our variable.
+            abc += 13;
+
+            Console.WriteLine(abc);
+        }
+
+        /// <summary>
+        ///   The one comment.
         /// </summary>
         public void TooLong()
         {
@@ -81,56 +179,46 @@ namespace CleanCodersStyleCopRules.Test.Resources
             Console.WriteLine(abc);
         }
 
-        /// <summary>
-        /// The noise comment.
-        /// </summary>
-        public void NoiseComment()
-        {
-            // Initialize our variable.
-            int abc = 0;
-
-            // Add one more to our variable.
-            abc += 1;
-
-            // Add one more to our variable.
-            abc += 2;
-
-            // Add one more to our variable.
-            abc += 3;
-
-            // Add one more to our variable.
-            abc += 4;
-
-            // Add one more to our variable.
-            abc += 5;
-
-            // Add one more to our variable.
-            abc += 6;
-
-            // Add one more to our variable.
-            abc += 7;
-
-            // Add one more to our variable.
-            abc += 8;
-
-            // Add one more to our variable.
-            abc += 9;
-
-            // Add one more to our variable.
-            abc += 10;
-
-            // Add one more to our variable.
-            abc += 11;
-
-            // Add one more to our variable.
-            abc += 12;
-
-            // Add one more to our variable.
-            abc += 13;
-
-            Console.WriteLine(abc);
-        }
-
         #endregion
+
+        /// <summary>
+        ///   Initializes a new instance of the <see cref="VariableNameHasHungarianPrefixTest.Point" /> struct.
+        /// </summary>
+        public struct Point
+        {
+            #region Fields
+
+            /// <summary>
+            ///   The coordinate x.
+            /// </summary>
+            public int CoordinateX;
+
+            /// <summary>
+            ///   The coordinate y.
+            /// </summary>
+            public int CoordinateY;
+
+            #endregion
+
+            #region Constructors and Destructors
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Point"/> struct.
+            /// </summary>
+            /// <param name="coordinateX">
+            /// The coordinate X. 
+            /// </param>
+            /// <param name="coordinateY">
+            /// The coordinate Y. 
+            /// </param>
+            public Point(int coordinateX, int coordinateY)
+            {
+                // Set our fields.
+                this.CoordinateX = coordinateX;
+                this.CoordinateY = coordinateY;
+            }
+
+            #endregion
+        }
     }
 }

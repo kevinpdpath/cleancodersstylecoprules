@@ -70,11 +70,6 @@ namespace CleanCodersStyleCopRules.Rule
                 ProcessName(element, name, element.LineNumber, context);
             }
 
-            foreach (Field field in element.ChildCodeElements.OfType<Field>().ToList())
-            {
-                ProcessName(element, field.Declaration.Name, field.LineNumber, context);
-            }
-
             foreach (Delegate delegateObject in element.ChildCodeElements.OfType<Delegate>().ToList())
             {
                 ParseDelegate(delegateObject, context);
@@ -109,6 +104,47 @@ namespace CleanCodersStyleCopRules.Rule
             {
                 ParseEnum(enumObject, context);
             }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Validate if a variable name has non english characters in it an expression.
+        /// </summary>
+        /// <param name="expression">
+        /// The expression. 
+        /// </param>
+        /// <param name="parentExpression">
+        /// The parent expression. 
+        /// </param>
+        /// <param name="parentStatement">
+        /// The parent statement. 
+        /// </param>
+        /// <param name="parentElement">
+        /// The parent element. 
+        /// </param>
+        /// <param name="context">
+        /// The context, this class. 
+        /// </param>
+        /// <returns>
+        /// True if all visited expressions are valid, False otherwise. 
+        /// </returns>
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
+        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        {
+            if (expression.ExpressionType != ExpressionType.VariableDeclarator)
+            {
+                return true;
+            }
+
+            VariableDeclaratorExpression variableDeclaratorExpression = expression as VariableDeclaratorExpression;
+
+            if (variableDeclaratorExpression == null)
+            {
+                return true;
+            }
+
+            ProcessName(parentElement, variableDeclaratorExpression.Identifier.Text, expression.LineNumber, context);
 
             return true;
         }
@@ -191,7 +227,7 @@ namespace CleanCodersStyleCopRules.Rule
         }
 
         /// <summary>
-        /// Parse method and the names of its argument and its variables.
+        /// Parse method and the names of its argument.
         /// </summary>
         /// <param name="method">
         /// The method. 
@@ -210,11 +246,6 @@ namespace CleanCodersStyleCopRules.Rule
             {
                 ProcessName(method, parameter.Name, parameter.LineNumber, context);
             }
-
-            foreach (Variable variable in method.Variables.ToList())
-            {
-                ProcessName(method, variable.Name, variable.LineNumber, context);
-            }
         }
 
         /// <summary>
@@ -229,11 +260,6 @@ namespace CleanCodersStyleCopRules.Rule
         private static void ParseStruct(Struct structObject, CleanCoderAnalyzer context)
         {
             ProcessName(structObject, structObject.Declaration.Name, structObject.LineNumber, context);
-
-            foreach (Field field in structObject.ChildCodeElements.OfType<Field>().ToList())
-            {
-                ProcessName(structObject, field.Declaration.Name, field.LineNumber, context);
-            }
 
             foreach (Constructor constructor in structObject.ChildCodeElements.OfType<Constructor>().ToList())
             {

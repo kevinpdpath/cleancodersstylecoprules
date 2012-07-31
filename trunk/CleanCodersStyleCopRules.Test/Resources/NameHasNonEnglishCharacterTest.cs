@@ -125,6 +125,12 @@ namespace CleanCodersStyleCopRules.Test.Resources
             string flag = "abc";
 
             Console.WriteLine(flag + Whoops);
+
+            foreach (string nomBébé in new List<string> { "George", "Bo", "Heliot" })
+            {
+                string backupBébé = nomBébé;
+                Console.WriteLine(nomBébé);
+            }
         }
 
         #endregion
@@ -251,11 +257,11 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <typeparam name="T">
     /// The class type.
     /// </typeparam>
-    public class Repository<T> where T : class
+    public class Repositoré<T> where T : class
     {
         /// <summary>
         /// The some test.
         /// </summary>
-        private string someTest;
+        private string yéyé;
     }
 }

@@ -41,9 +41,9 @@ namespace CleanCodersStyleCopRules.Test
         {
             string settings = AppDomain.CurrentDomain.BaseDirectory + @"\Resources\Settings.StyleCop";
 
-            List<string> addInPath = new List<string> { AppDomain.CurrentDomain.BaseDirectory };
+            List<string> addInPaths = new List<string> { AppDomain.CurrentDomain.BaseDirectory };
 
-            this.StyleCopConsole = new StyleCopConsole(settings, false, null, addInPath, true);
+            this.StyleCopConsole = new StyleCopConsole(settings, false, null, addInPaths, true);
 
             this.StyleCopConsole.ViolationEncountered += (sender, args) => this.StyleCopViolations.Add(args.Violation);
 

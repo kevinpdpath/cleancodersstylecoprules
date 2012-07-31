@@ -10,7 +10,6 @@
 namespace CleanCodersStyleCopRules.Rule
 {
     using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
     using System.Reflection;
 
     using StyleCop;

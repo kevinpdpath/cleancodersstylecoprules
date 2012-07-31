@@ -226,7 +226,7 @@ namespace CleanCodersStyleCopRules.Test
         [Test]
         public void NameHasNonEnglishCharacter()
         {
-            this.AnalyzeCodeWithAssertion("NameHasNonEnglishCharacterTest.cs", 24);
+            this.AnalyzeCodeWithAssertion("NameHasNonEnglishCharacterTest.cs", 28);
         }
 
         /// <summary>

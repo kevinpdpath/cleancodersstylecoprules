@@ -196,6 +196,9 @@ namespace CleanCodersStyleCopRules
                 new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.Unary }, MethodCallback = ExpressionHasNegativeConditional.ValidateExpression });
 
             this.ExpressionVisitorRegistry.Add(
+                new ExpressionVisitorContainer { ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = NameHasNonEnglishCharacter.ValidateExpression });
+
+            this.ExpressionVisitorRegistry.Add(
                 new ExpressionVisitorContainer
                     {
                         ExpressionTypes = new List<ExpressionType> { ExpressionType.VariableDeclarator }, MethodCallback = VariableNameHasHungarianPrefix.ValidateExpression

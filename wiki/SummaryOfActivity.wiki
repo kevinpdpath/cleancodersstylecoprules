@@ -29,4 +29,4 @@ Modified the rule `VariableNameIsTooShort`. Before the change, the rule would si
 
 *July 31st, 2012*
 
-Sight, I assumed way too much. I was under the impression that, when I was using the `method.Variables` that would return me all the variables ever declared under the specified method. Boy was I wrong. So, I ended up adding more code inside the Resources\TestClasses and adjusted the add-in code accordingly. Now, it catches a lot more stuff that it was before.
+Sight, I assumed way too much. I was under the impression that, when I was using the `method.Variables` that would return me all the variables ever declared under the specified method. Boy was I wrong. So, I ended up adding more code inside the Resources directory and adjusted the add-in code accordingly. Now, it catches a lot more stuff that it was before.

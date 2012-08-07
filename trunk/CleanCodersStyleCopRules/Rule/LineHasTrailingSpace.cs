@@ -83,10 +83,19 @@ namespace CleanCodersStyleCopRules.Rule
 
                 int trimmedLength = currentLine.TrimEnd(new[] { ' ' }).Length;
 
-                if (currentLine.Trim().EndsWith(","))
+                string trimmedLine = currentLine.Trim();
+
+                if (trimmedLine.Length > 0)
                 {
+                    char lastChar = (char)trimmedLine.ToCharArray().GetValue(trimmedLine.Length - 1);
+
+                    List<char> endChars = new List<char> { ',', ')', '|', '&', '=', '?', ':' };
+
                     // The + 1 here is to allow for a single trailing space, because when we have multiple line statements, they always end up with 1 trailing space.
-                    trimmedLength += 1;
+                    if (endChars.Contains(lastChar))
+                    {
+                        trimmedLength += 1;
+                    }
                 }
 
                 if (currentLine.Length > trimmedLength)

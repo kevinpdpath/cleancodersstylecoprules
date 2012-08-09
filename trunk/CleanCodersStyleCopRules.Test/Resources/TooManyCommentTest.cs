@@ -34,6 +34,12 @@ namespace CleanCodersStyleCopRules.Test.Resources
         {
             // A comment.
             Console.WriteLine("Hello world!");
+
+            // TODO this comment is ignored in the percentage of comments in the code.
+
+            // HACK this comment is ignored in the percentage of comments in the code.
+
+            // UNDONE this comment is ignored in the percentage of comments in the code.
         }
 
         #endregion

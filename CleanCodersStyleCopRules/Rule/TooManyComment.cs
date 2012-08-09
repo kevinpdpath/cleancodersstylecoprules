@@ -10,9 +10,11 @@
 namespace CleanCodersStyleCopRules.Rule
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
+    using System.Text.RegularExpressions;
 
     using StyleCop;
     using StyleCop.CSharp;
@@ -82,7 +84,21 @@ namespace CleanCodersStyleCopRules.Rule
 
             int numberOfLinesInMethod = lastToken.LineNumber - firstLineNumber;
 
-            int numberOfLineOfComment = element.Tokens.Count(token => token.CsTokenType == CsTokenType.SingleLineComment);
+            IEnumerable<CsToken> commentTokens = from t in element.Tokens where t.CsTokenType == CsTokenType.SingleLineComment select t;
+
+            Regex acceptableComment = new Regex("^// TODO|// HACK|// UNDONE");
+
+            int numberOfLineOfComment = 0;
+
+            foreach (CsToken commentToken in commentTokens)
+            {
+                if (acceptableComment.IsMatch(commentToken.Text))
+                {
+                    continue;
+                }
+
+                numberOfLineOfComment++;
+            }
 
             if (numberOfLineOfComment == 0)
             {

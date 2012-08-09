@@ -30,3 +30,8 @@ Modified the rule `VariableNameIsTooShort`. Before the change, the rule would si
 *July 31st, 2012*
 
 Sight, I assumed way too much. I was under the impression that, when I was using the `method.Variables` that would return me all the variables ever declared under the specified method. Boy was I wrong. So, I ended up adding more code inside the Resources directory and adjusted the add-in code accordingly. Now, it catches a lot more stuff that it was before. Assumption is the mother of all screw ups. And I screwed up. :D
+
+
+*August 8th, 2012*
+
+Enhancement to the trailing spaces rule. I have added a list of characters that can be followed by a space. This is a must when splitting code lines on multiple lines. Modified the too many comments rule to exclude `// TODO`, `// HACK` and `// UNDONE` comments.

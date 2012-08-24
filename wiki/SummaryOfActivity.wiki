@@ -35,3 +35,10 @@ Sight, I assumed way too much. I was under the impression that, when I was using
 *August 8th, 2012*
 
 Enhancement to the trailing spaces rule. I have added a list of characters that can be followed by a space. This is a must when splitting code lines on multiple lines. Modified the too many comments rule to exclude `// TODO`, `// HACK` and `// UNDONE` comments.
+
+
+*August 24th, 2012*
+
+Fixed a problem with rule `FileNameMustMatchTypeName` where the rule was not detecting the name of the file versus the type, when the file had more than one extension, eg: SomeFile.designer.cs.
+
+Change the rule detecting train wrecks. Now, the line is split at spaces, and then, the check for train wreck is executed. So, it is now possible to have more than 3 "wagons", just note in the same line part.

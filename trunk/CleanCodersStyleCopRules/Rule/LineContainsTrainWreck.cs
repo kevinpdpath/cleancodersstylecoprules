@@ -95,11 +95,16 @@ namespace CleanCodersStyleCopRules.Rule
 
                 Regex wagonRegex = new Regex(@"\(*\)[\.|;]");
 
-                int numberOfWagon = wagonRegex.Matches(currentLine).Count;
+                string[] phraseParts = currentLine.Split(' ');
 
-                if (numberOfWagon > 3)
+                foreach (string phrasePart in phraseParts)
                 {
-                    context.AddViolation(documentRoot, currentLineNumber, RuleName, numberOfWagon, context.AnalyserSetting[RuleSettingName]);
+                    int numberOfWagon = wagonRegex.Matches(phrasePart).Count;
+
+                    if (numberOfWagon > 3)
+                    {
+                        context.AddViolation(documentRoot, currentLineNumber, RuleName, numberOfWagon, context.AnalyserSetting[RuleSettingName]);
+                    }
                 }
             }
 

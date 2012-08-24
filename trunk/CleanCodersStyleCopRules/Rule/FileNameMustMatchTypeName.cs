@@ -57,6 +57,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
+        [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0034:MethodContainsTooManyLine", Justification = "Cannot split it any further.")]
         public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
@@ -68,6 +69,13 @@ namespace CleanCodersStyleCopRules.Rule
             }
 
             string fileName = Path.GetFileNameWithoutExtension(element.Document.SourceCode.Path);
+
+            if (string.IsNullOrEmpty(fileName) == false && fileName.IndexOf(".", System.StringComparison.InvariantCultureIgnoreCase) >= 0)
+            {
+                int offset = fileName.IndexOf(".", System.StringComparison.InvariantCultureIgnoreCase);
+
+                fileName = fileName.Substring(0, offset);
+            }
 
             if (string.IsNullOrEmpty(fileName))
             {

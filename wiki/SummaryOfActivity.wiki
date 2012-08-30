@@ -42,3 +42,8 @@ Enhancement to the trailing spaces rule. I have added a list of characters that 
 Fixed a problem with rule `FileNameMustMatchTypeName` where the rule was not detecting the name of the file versus the type, when the file had more than one extension, eg: `SomeFile.designer.cs`.
 
 Change the rule detecting train wrecks. Now, the line is split at spaces, and then, the check for train wreck is executed. So, it is now possible to have more than 3 "wagons", just not in the same line part.
+
+
+*August 30th, 2012*
+
+No code change, updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.36.0

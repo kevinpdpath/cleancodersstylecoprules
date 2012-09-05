@@ -47,3 +47,9 @@ Change the rule detecting train wrecks. Now, the line is split at spaces, and th
 *August 30th, 2012*
 
 No code change, updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.36.0
+
+
+*September 4th, 2012*
+
+Added a new download. This is an add-in that removes the trailing spaces of a code file in one swift swoop. It adds a new tool in the `Tools` menu of Visual Studio 2010. The included `README.TXT` details the actions required to install it, or rather, extract it at the right place on your drive for Visual Studio 2010 to pick it up.
+

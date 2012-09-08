@@ -9,6 +9,8 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System;
+
     /// <summary>
     /// Dummy class to unit test the LineTooLong custom StyleCop rule.
     /// </summary>
@@ -23,6 +25,8 @@ namespace CleanCodersStyleCopRules.Test.Resources
         {
             string longLine =
                 "long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long  long";
+
+            Console.WriteLine("Hello there: {0}", longLine);
         }
 
         #endregion

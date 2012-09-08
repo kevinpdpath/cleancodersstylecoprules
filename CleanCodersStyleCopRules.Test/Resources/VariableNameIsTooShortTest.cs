@@ -63,7 +63,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
                 Console.WriteLine("Hello there: {0}", z);
                 Console.WriteLine("Hello there: {0}", z);
                 Console.WriteLine("Hello there: {0}", z);
-                Console.WriteLine("Hello there: {0}", z);
+                Console.WriteLine("Hello there: {0}, {1}", z, j);
             }
 
             for (int k = 0; k < int.MaxValue; k++)
@@ -77,7 +77,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
                 Console.WriteLine("Hello there: {0}", k);
                 Console.WriteLine("Hello there: {0}", k);
                 Console.WriteLine("Hello there: {0}", k);
-                Console.WriteLine("Hello there: {0}", k);
+                Console.WriteLine("Hello there: {0}, {1}", k, h);
             }
 
             if (true)
@@ -87,7 +87,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
                 // Short variables initializing the for statement are accepted, the loop must be 10 lines or less.
                 for (int q = 0; q < int.MaxValue; q++)
                 {
-                    Console.WriteLine("Hello there: {0}", q);
+                    Console.WriteLine("Hello there: {0}, {1}", q, o);
 
                     if (true)
                     {
@@ -102,7 +102,9 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// </summary>
         public void WithOneErrors()
         {
-            string c;
+            string c = string.Empty;
+
+            Console.WriteLine("Hello there: {0}", c);
         }
 
         #endregion

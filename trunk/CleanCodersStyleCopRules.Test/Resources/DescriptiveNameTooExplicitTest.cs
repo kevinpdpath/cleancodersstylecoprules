@@ -58,6 +58,19 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// The toto.
         /// </summary>
         private string toto;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MyClass"/> class.
+        /// </summary>
+        /// <param name="toto">
+        /// The toto.
+        /// </param>
+        public MyClass(string toto)
+        {
+            this.toto = toto;
+
+            Console.WriteLine(toto);
+        }
     }
 
     /// <summary>

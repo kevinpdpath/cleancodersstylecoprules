@@ -9,6 +9,7 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
@@ -51,19 +52,31 @@ namespace CleanCodersStyleCopRules.Test.Resources
         {
             const string LOCAL_ALL_CAPS_CONSTANT = "abc";
 
+            Console.WriteLine("Hello there: {0}", LOCAL_ALL_CAPS_CONSTANT);
+
             const string LocalPascalCaseConstant = "Abc";
+
+            Console.WriteLine("Hello there: {0}", LocalPascalCaseConstant);
 
             const string LOCALSCREAMINGCAPS = "abc";
 
+            Console.WriteLine("Hello there: {0}", LOCALSCREAMINGCAPS);
+
             const string LOCAL_CONSTANTALL_CAPS_AGAIN = "abc";
+
+            Console.WriteLine("Hello there: {0}", LOCAL_CONSTANTALL_CAPS_AGAIN);
 
             if (true)
             {
                 const string TTTTUUUU = "abc;";
 
+                Console.WriteLine("Hello there: {0}", TTTTUUUU);
+
                 for (int i = 0; i < 10; i++)
                 {
                     const string EEEERRRR = "abc";
+
+                    Console.WriteLine("Hello there: {0}", EEEERRRR);
                 }
             }
         }

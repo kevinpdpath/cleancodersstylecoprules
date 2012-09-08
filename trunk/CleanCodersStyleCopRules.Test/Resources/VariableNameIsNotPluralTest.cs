@@ -9,6 +9,7 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -64,7 +65,9 @@ namespace CleanCodersStyleCopRules.Test.Resources
         {
             for (int i = 0; i < 10; i++)
             {
-                int[] gougou;
+                int[] gougou = { 1, 2, 3 };
+
+                Console.WriteLine("Hello there: {0}", gougou[0]);
             }
 
             ArrayList arrayList;

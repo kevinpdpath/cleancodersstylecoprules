@@ -128,7 +128,9 @@ namespace CleanCodersStyleCopRules.Test.Resources
         /// </param>
         public void WithoutErrors(int abc, int def)
         {
-            string lastName;
+            string lastName = string.Empty;
+
+            Console.WriteLine("Hello there: {0}", lastName);
         }
 
         #endregion

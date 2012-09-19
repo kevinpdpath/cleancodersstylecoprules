@@ -52,3 +52,8 @@ No code change, updated the Trunk to match [http://stylecop.codeplex.com/ StyleC
 *September 4th, 2012*
 
 Added a new download. I made this for people that were bitching about the trailing spaces rule. Its a Visual Studio 2010 add-in that removes the trailing spaces of a code file in one swift swoop. The add-in adds a new tool in the `Tools` menu of Visual Studio. The included `README.TXT` details the actions required to install it, or rather, extract it at the right place on your drive for Visual Studio to pick it up.
+
+
+*September 18th, 2012*
+
+Virtually no code change, updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.37.0

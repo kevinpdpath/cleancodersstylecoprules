@@ -57,3 +57,8 @@ Added a new download. I made this for people that were bitching about the traili
 *September 18th, 2012*
 
 Virtually no code change, updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.37.0
+
+
+*September 27th, 2012*
+
+Added the `TrailingSpacesRemover` source code in a sub-directory under this project. Also added another subdirectory for a new tool I made that allows, from a command prompt, to merge multiple [http://stylecop.codeplex.com/ StyleCop] violations files and apply a style sheet to the output to display the result in a Web browser.

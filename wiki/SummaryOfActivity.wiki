@@ -61,4 +61,4 @@ Virtually no code change, updated the Trunk to match [http://stylecop.codeplex.c
 
 *September 27th, 2012*
 
-Added the `TrailingSpacesRemover` source code in a sub-directory under this project. Also added another subdirectory for a new tool I made that allows, from a command prompt, to merge multiple [http://stylecop.codeplex.com/ StyleCop] violations files and apply a style sheet to the output to display the result in a Web browser.
+Added the `TrailingSpacesRemover` source code in a sub-directory under this project. Also added another subdirectory called `StyleCopMergeAndStyle` for a new tool I made that allows, from the command prompt, to merge multiple [http://stylecop.codeplex.com/ StyleCop] violations files and apply a style sheet to the output in order to display the result in a Web browser.

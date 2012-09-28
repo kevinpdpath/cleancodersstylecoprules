@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ResourceHelperTest.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="ResourceHelperTest.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   The resource helper test.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle.Test
@@ -15,7 +12,7 @@ namespace StyleCopMergeAndStyle.Test
     using NUnit.Framework;
 
     /// <summary>
-    /// The resource helper test.
+    ///   The resource helper test.
     /// </summary>
     [TestFixture]
     public class ResourceHelperTest
@@ -23,7 +20,7 @@ namespace StyleCopMergeAndStyle.Test
         #region Public Methods and Operators
 
         /// <summary>
-        /// The write embedded resource to file.
+        ///   The write embedded resource to file.
         /// </summary>
         [Test]
         public void WriteEmbeddedResourceToFile()
@@ -48,7 +45,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The write embedded resource to file with bad resource name.
+        ///   The write embedded resource to file with bad resource name.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ApplicationException))]

@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ViolationMergerTest.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="ViolationMergerTest.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   The violation merger test.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle.Test
@@ -17,7 +14,7 @@ namespace StyleCopMergeAndStyle.Test
     using StyleCopMergeAndStyle.Struct;
 
     /// <summary>
-    /// The violation merger test.
+    ///   The violation merger test.
     /// </summary>
     [TestFixture]
     public class ViolationMergerTest
@@ -25,7 +22,7 @@ namespace StyleCopMergeAndStyle.Test
         #region Public Methods and Operators
 
         /// <summary>
-        /// The merge.
+        ///   The merge.
         /// </summary>
         [Test]
         public void Merge()
@@ -38,7 +35,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The merge with bad file.
+        ///   The merge with bad file.
         /// </summary>
         [Test]
         [ExpectedException(typeof(FileNotFoundException))]
@@ -50,7 +47,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The merge with empty.
+        ///   The merge with empty.
         /// </summary>
         [Test]
         public void MergeWithEmpty()

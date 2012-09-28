@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ResourceHelper.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="ResourceHelper.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   Helper class to manage resources.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle
@@ -14,7 +11,7 @@ namespace StyleCopMergeAndStyle
     using System.Reflection;
 
     /// <summary>
-    /// Helper class to manage resources.
+    ///   Helper class to manage resources.
     /// </summary>
     public static class ResourceHelper
     {
@@ -24,13 +21,13 @@ namespace StyleCopMergeAndStyle
         /// Extract an embedded resource and write it to a file.
         /// </summary>
         /// <param name="targetAssembly">
-        /// The target assembly.
+        /// The target assembly. 
         /// </param>
         /// <param name="resourceName">
-        /// The resource name.
+        /// The resource name. 
         /// </param>
         /// <param name="filepath">
-        /// The output file path.
+        /// The output file path. 
         /// </param>
         /// <exception cref="Exception">
         /// Thrown if a resource cannot be found.

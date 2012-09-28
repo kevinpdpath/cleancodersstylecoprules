@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="Program.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   Merge StyleCop Violations file and add a style sheed to the result.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle
@@ -20,14 +17,14 @@ namespace StyleCopMergeAndStyle
     using StyleCopMergeAndStyle.Struct;
 
     /// <summary>
-    /// Merge StyleCop Violations file and add a style sheed to the result.
+    ///   Merge StyleCop Violations file and add a style sheed to the result.
     /// </summary>
     public class Program
     {
         #region Static Fields
 
         /// <summary>
-        /// Usage displayed when no arguments are provided.
+        ///   Usage displayed when no arguments are provided.
         /// </summary>
         private static readonly string ConfigUsage = Environment.NewLine + "{0} /c path" + Environment.NewLine + Environment.NewLine + "Where:" + Environment.NewLine + Environment.NewLine
                                                      + "/c\t Specify the full or relative path to a configuration file" + Environment.NewLine + Environment.NewLine + Environment.NewLine + "Example: "
@@ -110,7 +107,7 @@ namespace StyleCopMergeAndStyle
         /// The write all embedded resource to file.
         /// </summary>
         /// <param name="outputDirectory">
-        /// The output directory.
+        /// The output directory. 
         /// </param>
         private static void WriteAllEmbeddedResourceToFile(string outputDirectory)
         {

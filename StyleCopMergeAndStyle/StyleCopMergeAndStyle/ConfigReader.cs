@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ConfigReader.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="ConfigReader.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   The custom config reader.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle
@@ -18,7 +15,7 @@ namespace StyleCopMergeAndStyle
     using StyleCopMergeAndStyle.Struct;
 
     /// <summary>
-    /// The custom config reader.
+    ///   The custom config reader.
     /// </summary>
     public static class ConfigReader
     {

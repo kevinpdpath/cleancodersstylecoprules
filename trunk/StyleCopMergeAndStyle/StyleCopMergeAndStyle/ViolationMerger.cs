@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ViolationMerger.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="ViolationMerger.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   The violation merger.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle
@@ -17,7 +14,7 @@ namespace StyleCopMergeAndStyle
     using System.Xml.Linq;
 
     /// <summary>
-    /// The violation merger.
+    ///   The violation merger.
     /// </summary>
     public static class ViolationMerger
     {

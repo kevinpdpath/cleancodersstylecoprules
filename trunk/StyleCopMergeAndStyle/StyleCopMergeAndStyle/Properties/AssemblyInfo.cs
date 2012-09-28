@@ -1,13 +1,8 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="AssemblyInfo.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   AssemblyInfo.cs
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-
 
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -18,9 +13,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("StyleCopMergeAndStyle")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Foncier Québec")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("StyleCopMergeAndStyle")]
-[assembly: AssemblyCopyright("Copyright © Foncier Québec 2012")]
+[assembly: AssemblyCopyright("Copyright © 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

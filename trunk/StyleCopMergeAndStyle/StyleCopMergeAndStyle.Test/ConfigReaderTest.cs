@@ -1,10 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ConfigReaderTest.cs" company="CGI">
-//   Copyright (c) CGI. All rights reserved.
+// <copyright file="ConfigReaderTest.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   The config reader test.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace StyleCopMergeAndStyle.Test
@@ -17,7 +14,7 @@ namespace StyleCopMergeAndStyle.Test
     using StyleCopMergeAndStyle.Struct;
 
     /// <summary>
-    /// The config reader test.
+    ///   The config reader test.
     /// </summary>
     [TestFixture]
     public class ConfigReaderTest
@@ -25,7 +22,7 @@ namespace StyleCopMergeAndStyle.Test
         #region Public Methods and Operators
 
         /// <summary>
-        /// The get configuration.
+        ///   The get configuration.
         /// </summary>
         [Test]
         public void GetConfiguration()
@@ -38,7 +35,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The constructor with invalid file.
+        ///   The constructor with invalid file.
         /// </summary>
         [Test]
         [ExpectedException(typeof(FileNotFoundException))]
@@ -48,7 +45,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get list violation file.
+        ///   The get list violation file.
         /// </summary>
         [Test]
         public void GetListViolationFile()
@@ -59,7 +56,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get list violation file with bad.
+        ///   The get list violation file with bad.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ApplicationException))]
@@ -69,7 +66,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get list violation file with empty.
+        ///   The get list violation file with empty.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ApplicationException))]
@@ -79,7 +76,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get list violation file with no.
+        ///   The get list violation file with no.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ApplicationException))]
@@ -89,7 +86,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get merge file.
+        ///   The get merge file.
         /// </summary>
         [Test]
         public void GetMergeFile()
@@ -100,7 +97,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get merge file with bad directory name.
+        ///   The get merge file with bad directory name.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ArgumentException))]
@@ -110,7 +107,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get merge file with bad file name.
+        ///   The get merge file with bad file name.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ArgumentException))]
@@ -120,7 +117,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get merge file with empty.
+        ///   The get merge file with empty.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ApplicationException))]
@@ -130,7 +127,7 @@ namespace StyleCopMergeAndStyle.Test
         }
 
         /// <summary>
-        /// The get merge file with no.
+        ///   The get merge file with no.
         /// </summary>
         [Test]
         [ExpectedException(typeof(ApplicationException))]

@@ -1,5 +1,10 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="None, it's free for all.">
+//   Copyright (c) None, it's free for all. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // Les informations générales relatives à un assembly dépendent de 
@@ -8,9 +13,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("StyleCopMergeAndStyle.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Foncier Québec")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("StyleCopMergeAndStyle.Test")]
-[assembly: AssemblyCopyright("Copyright © Foncier Québec 2012")]
+[assembly: AssemblyCopyright("Copyright © ")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -23,12 +28,10 @@ using System.Runtime.InteropServices;
 [assembly: Guid("1254cc9d-2cce-42b0-8a63-3e6076140927")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
-//
 //      Version principale
 //      Version secondaire 
 //      Numéro de build
 //      Révision
-//
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut 
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]

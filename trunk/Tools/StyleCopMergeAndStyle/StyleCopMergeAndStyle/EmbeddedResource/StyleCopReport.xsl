@@ -308,6 +308,14 @@
                             <xsl:value-of select="$section" />
                           </td>
                         </tr>
+                        <tr>
+                          <td>
+                            <b>To suppress, use:</b>
+                          </td>
+                          <td>
+                            [SuppressMessage("<xsl:value-of select="$rule.namespace" />", "<xsl:value-of select="$rule.id" />:<xsl:value-of select="$rule.rule" />", Justification = "Include your reason here.")]
+                          </td>
+                        </tr>
                       </table>
                     </div>
                   </div>

@@ -111,7 +111,7 @@ namespace CleanCodersStyleCopRules.Test
         /// Analyzes the code file.
         /// </summary>
         /// <param name="sourceCodeFileName">
-        /// The code file name (file name with extention, not the full path. File must be located in the Resources directory)
+        /// The code file name (file name with extention, not the full path. File must be located in the Resources directory).
         /// </param>
         /// <param name="numberOfExpectedViolation">
         /// The number of expected violations.

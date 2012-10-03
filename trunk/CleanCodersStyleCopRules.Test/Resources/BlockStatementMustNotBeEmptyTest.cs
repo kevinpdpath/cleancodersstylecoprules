@@ -9,9 +9,12 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System.Diagnostics.CodeAnalysis;
+
     /// <summary>
     ///   Dummy class to unit test the BlockStatementMustNotBeEmpty custom StyleCop rule.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public class BlockStatementMustNotBeEmptyTest
     {
         #region Public Methods and Operators

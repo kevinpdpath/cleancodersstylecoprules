@@ -17,7 +17,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         #region Public Properties
 
         /// <summary>
-        ///   Gets or sets a value indicating whether our xenomorph is freindly or not;
+        ///   Gets or sets a value indicating whether our xenomorph is freindly or not.
         /// </summary>
         bool Freindly { get; set; }
 

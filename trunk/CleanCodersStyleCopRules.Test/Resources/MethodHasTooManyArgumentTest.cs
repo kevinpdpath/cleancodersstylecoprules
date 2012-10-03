@@ -69,7 +69,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         #region Methods
 
         /// <summary>
-        /// Methods definition with too many arguments, but importing a DLL (which is allowable)
+        /// Methods definition with too many arguments, but importing a DLL (which is allowable).
         /// </summary>
         /// <param name="tmpPath">
         /// The temporary path.

@@ -17,6 +17,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   Dummy class to unit test the NameHasNonEnglishCharacter custom StyleCop rule.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public class NameHasNonEnglishCharacterTest
     {
         #region Constants
@@ -139,6 +140,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   Initializes a new instance of the <see cref="Coordonnée" /> struct.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public struct Coordonnée
     {
         #region Fields
@@ -178,6 +180,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   The journée.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public enum Journée
     {
         /// <summary>
@@ -239,6 +242,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   The Français interface.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public interface IFrançais
     {
         #region Public Methods and Operators

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+
+  <ProjectSolutionFilePath>C:\Code.Google.Com\cleancodersstylecoprules\</ProjectSolutionFilePath>
+  <StyleCopPathBin>C:\Program Files (x86)\StyleCop 4.7\</StyleCopPathBin>
+
+  <StyleCopForceFullAnalysis>true</StyleCopForceFullAnalysis>
+  <DefineConstants>DEBUG;TRACE</DefineConstants>
+  <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  <StyleCopCacheResults>false</StyleCopCacheResults>
+  <StyleCopOverrideSettingsFile> </StyleCopOverrideSettingsFile>
+  <StyleCopOutputFile>StyleCopViolations.xml</StyleCopOutputFile>
+  <StyleCopMaxViolationCount>1000</StyleCopMaxViolationCount>
+</PropertyGroup>
+
+<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+<UsingTask AssemblyFile="$(StyleCopPathBin)\StyleCop.dll" TaskName="StyleCopTask"/>
+   
+<Target Name="StyleCopSimple">
+    <Message Text="Processing StyleCop..."></Message>
+
+    <CreateItem Include="$(ProjectSolutionFilePath)**\*.cs">
+      <Output TaskParameter="Include" ItemName="StyleCopFiles"/>
+    </CreateItem>
+
+    <StyleCopTask
+      ProjectFullPath="$(ProjectSolutionFilePath)"
+      SourceFiles="@(StyleCopFiles)"
+      AdditionalAddinPaths="@(StyleCopAdditionalAddinPaths)"
+      ForceFullAnalysis="$(StyleCopForceFullAnalysis)"
+      DefineConstants="$(DefineConstants)"
+      TreatErrorsAsWarnings="$(StyleCopTreatErrorsAsWarnings)"
+      CacheResults="$(StyleCopCacheResults)"
+      OverrideSettingsFile="$(StyleCopOverrideSettingsFile)"
+      OutputFile="C:\Code.Google.Com\cleancodersstylecoprules\$(StyleCopOutputFile)"
+      MaxViolationCount="$(StyleCopMaxViolationCount)"
+	/>
+    </Target>
+
+</Project>
+

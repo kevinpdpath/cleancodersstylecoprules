@@ -65,4 +65,4 @@ Added the `TrailingSpacesRemover` source code in a sub-directory under this proj
 
 *October 3rd, 2012*
 
-Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.40.0. Added a `batch file` and an `msbuild file` next to the solution file to run [http://stylecop.codeplex.com/ StyleCop] at the command prompt and extract the violations contained in the project.
+Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.40.0. Added a `batch file` and an `msbuild file` next to the `solution file` to run [http://stylecop.codeplex.com/ StyleCop] at the command prompt and extract the violations contained in the project.

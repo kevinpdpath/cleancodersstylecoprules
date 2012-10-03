@@ -48,7 +48,6 @@ namespace CleanCodersStyleCopRules.Test.Resources
             bool notTrue = !true;
 
             Console.WriteLine("Hello there: {0}", notTrue.ToString(CultureInfo.InvariantCulture));
-
         }
 
         #endregion

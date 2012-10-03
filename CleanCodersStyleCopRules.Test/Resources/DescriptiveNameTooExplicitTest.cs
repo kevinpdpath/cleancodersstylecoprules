@@ -15,6 +15,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     /// The descriptive name too explicit test.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public class DescriptiveNameTooExplicitTest
     {
         #region Fields
@@ -76,7 +77,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   The Enum Must Not Contain Word Enum.
     /// </summary>
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "It's for a test.")]
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public enum EnumMustNotContainWordEnum
     {
         /// <summary>
@@ -98,7 +99,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     ///   Initializes a new instance of the <see cref="CoordinateStruct" /> struct.
     /// </summary>
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "It's for a test.")]
+   [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public struct CoordinateStruct
     {
         #region Fields
@@ -138,7 +139,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
     /// <summary>
     /// The SomeInterface interface.
     /// </summary>
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "It's for a test.")]
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Its for a test.")]
     public interface ISomeInterface
     {
         /// <summary>

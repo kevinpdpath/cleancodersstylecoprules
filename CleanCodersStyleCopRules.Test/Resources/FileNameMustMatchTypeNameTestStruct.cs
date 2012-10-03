@@ -9,6 +9,8 @@
 
 namespace CleanCodersStyleCopRules.Test.Resources
 {
+    using System.Diagnostics.CodeAnalysis;
+
     /// <summary>
     ///   Initializes a new instance of the <see cref="Coordinate" /> struct.
     /// </summary>

@@ -27,9 +27,9 @@ namespace CleanCodersStyleCopRules
     public class CleanCoderAnalyzer : SourceAnalyzer
     {
         /// <summary>
-        /// Custom rule's type list.
+        /// Custom rule's type dictionary cache.
         /// </summary>
-        private readonly List<Type> customRuleTypes = new List<Type>();
+        private readonly Dictionary<Type, ICustomRule> customRuleTypes = new Dictionary<Type, ICustomRule>();
 
         #region Constructors and Destructors
 
@@ -46,7 +46,7 @@ namespace CleanCodersStyleCopRules
             {
                 if (type.FullName.EndsWith("Rule.ICustomRule") == false && type.FullName.EndsWith("Rule.CustomRuleBase") == false)
                 {
-                    this.customRuleTypes.Add(type);
+                    this.customRuleTypes.Add(type, (ICustomRule)Activator.CreateInstance(type));
                 }
             }
         }
@@ -112,13 +112,11 @@ namespace CleanCodersStyleCopRules
 
             bool returnFlag = true;
 
-            foreach (Type customRuleType in this.customRuleTypes)
+            foreach (KeyValuePair<Type, ICustomRule> customRuleType in this.customRuleTypes)
             {
-                ICustomRule customRule = (ICustomRule)Activator.CreateInstance(customRuleType);
-
-                if (customRule.ElementTypes.Contains(element.ElementType))
+                if (customRuleType.Value.ElementTypes.Contains(element.ElementType))
                 {
-                    returnFlag = customRule.ValidateElement(element, parentElement, context);
+                    returnFlag = customRuleType.Value.ValidateElement(element, parentElement, context);
                 }
             }
 
@@ -151,13 +149,11 @@ namespace CleanCodersStyleCopRules
         {
             bool returnFlag = true;
 
-            foreach (Type customRuleType in this.customRuleTypes)
+            foreach (KeyValuePair<Type, ICustomRule> customRuleType in this.customRuleTypes)
             {
-                ICustomRule customRule = (ICustomRule)Activator.CreateInstance(customRuleType);
-
-                if (customRule.ExpressionTypes.Contains(expression.ExpressionType))
+                if (customRuleType.Value.ExpressionTypes.Contains(expression.ExpressionType))
                 {
-                    returnFlag = customRule.ValidateExpression(expression, parentExpression, parentStatement, parentElement, context);
+                    returnFlag = customRuleType.Value.ValidateExpression(expression, parentExpression, parentStatement, parentElement, context);
                 }
             }
 
@@ -190,13 +186,11 @@ namespace CleanCodersStyleCopRules
         {
             bool returnFlag = true;
 
-            foreach (Type customRuleType in this.customRuleTypes)
+            foreach (KeyValuePair<Type, ICustomRule> customRuleType in this.customRuleTypes)
             {
-                ICustomRule customRule = (ICustomRule)Activator.CreateInstance(customRuleType);
-
-                if (customRule.StatementTypes.Contains(statement.StatementType))
+                if (customRuleType.Value.StatementTypes.Contains(statement.StatementType))
                 {
-                    returnFlag = customRule.ValidateStatement(statement, parentExpression, parentStatement, parentElement, context);
+                    returnFlag = customRuleType.Value.ValidateStatement(statement, parentExpression, parentStatement, parentElement, context);
                 }
             }
 

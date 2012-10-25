@@ -2,9 +2,6 @@
 // <copyright file="NameHasNonEnglishCharacter.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a name has non english characters in it.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -20,16 +17,34 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a name has non english characters in it.
+    /// StyleCop custom rule that validates if a name has non english characters in it.
     /// </summary>
-    public static class NameHasNonEnglishCharacter
+    public class NameHasNonEnglishCharacter : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NameHasNonEnglishCharacter"/> class.
+        /// </summary>
+        public NameHasNonEnglishCharacter()
+        {
+            this.ElementTypes.Add(ElementType.Namespace);
+            this.ElementTypes.Add(ElementType.Class);
+            this.ElementTypes.Add(ElementType.Enum);
+            this.ElementTypes.Add(ElementType.Interface);
+            this.ElementTypes.Add(ElementType.Struct);
+
+            this.ExpressionTypes.Add(ExpressionType.VariableDeclarator);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -58,7 +73,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0034:MethodContainsTooManyLine", Justification = "Parent method lunching many child methods.")]
-        public static bool Validate(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
@@ -67,42 +82,42 @@ namespace CleanCodersStyleCopRules.Rule
             {
                 string name = Utility.TrimGenericType(element.Declaration.Name);
 
-                ProcessName(element, name, element.LineNumber, context);
+                this.ProcessName(element, name, element.LineNumber, context);
             }
 
             foreach (Delegate delegateObject in element.ChildCodeElements.OfType<Delegate>().ToList())
             {
-                ParseDelegate(delegateObject, context);
+                this.ParseDelegate(delegateObject, context);
             }
 
             foreach (Event eventObject in element.ChildCodeElements.OfType<Event>().ToList())
             {
-                ParseEvent(eventObject, context);
+                this.ParseEvent(eventObject, context);
             }
 
             foreach (Property property in element.ChildCodeElements.OfType<Property>().ToList())
             {
-                ProcessName(element, property.Declaration.Name, property.LineNumber, context);
+                this.ProcessName(element, property.Declaration.Name, property.LineNumber, context);
             }
 
             foreach (Constructor constructor in element.ChildCodeElements.OfType<Constructor>().ToList())
             {
-                ParseConstructor(constructor, context);
+                this.ParseConstructor(constructor, context);
             }
 
             foreach (Method method in element.ChildCodeElements.OfType<Method>().ToList())
             {
-                ParseMethod(method, context);
+                this.ParseMethod(method, context);
             }
 
             foreach (Struct structObject in element.ChildCodeElements.OfType<Struct>().ToList())
             {
-                ParseStruct(structObject, context);
+                this.ParseStruct(structObject, context);
             }
 
             foreach (Enum enumObject in element.ChildCodeElements.OfType<Enum>().ToList())
             {
-                ParseEnum(enumObject, context);
+                this.ParseEnum(enumObject, context);
             }
 
             return true;
@@ -130,7 +145,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// True if all visited expressions are valid, False otherwise. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
-        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
             if (expression.ExpressionType != ExpressionType.VariableDeclarator)
             {
@@ -144,7 +159,7 @@ namespace CleanCodersStyleCopRules.Rule
                 return true;
             }
 
-            ProcessName(parentElement, variableDeclaratorExpression.Identifier.Text, expression.LineNumber, context);
+            this.ProcessName(parentElement, variableDeclaratorExpression.Identifier.Text, expression.LineNumber, context);
 
             return true;
         }
@@ -162,13 +177,13 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
-        private static void ParseConstructor(Constructor constructor, CleanCoderAnalyzer context)
+        private void ParseConstructor(Constructor constructor, CleanCoderAnalyzer context)
         {
-            ProcessName(constructor, constructor.Declaration.Name, constructor.LineNumber, context);
+            this.ProcessName(constructor, constructor.Declaration.Name, constructor.LineNumber, context);
 
             foreach (Parameter parameter in constructor.Parameters.ToList())
             {
-                ProcessName(constructor, parameter.Name, parameter.LineNumber, context);
+                this.ProcessName(constructor, parameter.Name, parameter.LineNumber, context);
             }
         }
 
@@ -181,13 +196,13 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
-        private static void ParseDelegate(Delegate delegateObject, CleanCoderAnalyzer context)
+        private void ParseDelegate(Delegate delegateObject, CleanCoderAnalyzer context)
         {
-            ProcessName(delegateObject, delegateObject.Declaration.Name, delegateObject.LineNumber, context);
+            this.ProcessName(delegateObject, delegateObject.Declaration.Name, delegateObject.LineNumber, context);
 
             foreach (Parameter parameter in delegateObject.Parameters.ToList())
             {
-                ProcessName(delegateObject, parameter.Name, parameter.LineNumber, context);
+                this.ProcessName(delegateObject, parameter.Name, parameter.LineNumber, context);
             }
         }
 
@@ -200,13 +215,13 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
-        private static void ParseEnum(Enum enumObject, CleanCoderAnalyzer context)
+        private void ParseEnum(Enum enumObject, CleanCoderAnalyzer context)
         {
-            ProcessName(enumObject, enumObject.Declaration.Name, enumObject.LineNumber, context);
+            this.ProcessName(enumObject, enumObject.Declaration.Name, enumObject.LineNumber, context);
 
             foreach (EnumItem enumItem in enumObject.ChildCodeElements.OfType<EnumItem>().ToList())
             {
-                ProcessName(enumObject, enumItem.Declaration.Name, enumItem.LineNumber, context);
+                this.ProcessName(enumObject, enumItem.Declaration.Name, enumItem.LineNumber, context);
             }
         }
 
@@ -219,11 +234,11 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
-        private static void ParseEvent(Event eventObject, CleanCoderAnalyzer context)
+        private void ParseEvent(Event eventObject, CleanCoderAnalyzer context)
         {
-            ProcessName(eventObject, eventObject.Declaration.Name, eventObject.LineNumber, context);
+            this.ProcessName(eventObject, eventObject.Declaration.Name, eventObject.LineNumber, context);
 
-            ProcessName(eventObject, eventObject.EventHandlerType.Text, eventObject.LineNumber, context);
+            this.ProcessName(eventObject, eventObject.EventHandlerType.Text, eventObject.LineNumber, context);
         }
 
         /// <summary>
@@ -236,15 +251,15 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context. 
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0309:DescriptiveNameTooExplicit", Justification = "It's for a test.")]
-        private static void ParseMethod(Method method, CleanCoderAnalyzer context)
+        private void ParseMethod(Method method, CleanCoderAnalyzer context)
         {
             string methodName = Utility.TrimGenericType(method.Declaration.Name);
 
-            ProcessName(method, methodName, method.LineNumber, context);
+            this.ProcessName(method, methodName, method.LineNumber, context);
 
             foreach (Parameter parameter in method.Parameters.ToList())
             {
-                ProcessName(method, parameter.Name, parameter.LineNumber, context);
+                this.ProcessName(method, parameter.Name, parameter.LineNumber, context);
             }
         }
 
@@ -257,13 +272,13 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
-        private static void ParseStruct(Struct structObject, CleanCoderAnalyzer context)
+        private void ParseStruct(Struct structObject, CleanCoderAnalyzer context)
         {
-            ProcessName(structObject, structObject.Declaration.Name, structObject.LineNumber, context);
+            this.ProcessName(structObject, structObject.Declaration.Name, structObject.LineNumber, context);
 
             foreach (Constructor constructor in structObject.ChildCodeElements.OfType<Constructor>().ToList())
             {
-                ParseConstructor(constructor, context);
+                this.ParseConstructor(constructor, context);
             }
         }
 
@@ -283,7 +298,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context, this class. 
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        private static void ProcessName(CsElement element, string name, int lineNumber, CleanCoderAnalyzer context)
+        private void ProcessName(CsElement element, string name, int lineNumber, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(name, "name");
@@ -294,7 +309,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (englishOnlyRegex.IsMatch(name) == false)
             {
-                context.AddViolation(element, lineNumber, RuleName, name);
+                context.AddViolation(element, lineNumber, this.RuleName, name);
             }
         }
 

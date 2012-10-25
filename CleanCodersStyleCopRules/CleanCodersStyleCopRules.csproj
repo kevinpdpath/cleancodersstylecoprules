@@ -61,7 +61,9 @@
     <Compile Include="Rule\ClassNameHasTooManyWord.cs" />
     <Compile Include="Rule\BlockStatementMustNotBeEmpty.cs" />
     <Compile Include="Rule\ConstantIsNotPascalCase.cs" />
+    <Compile Include="Rule\CustomRuleBase.cs" />
     <Compile Include="Rule\DescriptiveNameTooExplicit.cs" />
+    <Compile Include="Rule\ICustomRule.cs" />
     <Compile Include="Rule\MethodNameHasTooManyWord.cs" />
     <Compile Include="Rule\TooManyComment.cs" />
     <Compile Include="Rule\NameHasNonEnglishCharacter.cs" />

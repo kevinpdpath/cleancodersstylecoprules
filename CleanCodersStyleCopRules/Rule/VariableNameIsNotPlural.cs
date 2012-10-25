@@ -2,9 +2,6 @@
 // <copyright file="VariableNameIsNotPlural.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a variable name is not plural.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -20,16 +17,31 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a variable name is not plural.
+    /// StyleCop custom rule that validates if a variable name is not plural.
     /// </summary>
-    public static class VariableNameIsNotPlural
+    public class VariableNameIsNotPlural : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VariableNameIsNotPlural"/> class.
+        /// </summary>
+        public VariableNameIsNotPlural()
+        {
+            this.ElementTypes.Add(ElementType.Method);
+            this.ElementTypes.Add(ElementType.Constructor);
+
+            this.ExpressionTypes.Add(ExpressionType.VariableDeclarator);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -57,18 +69,18 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
             if (element.ElementType == ElementType.Method)
             {
-                ProcessParameter(element, ((Method)element).Parameters.ToList(), context);
+                this.ProcessParameter(element, ((Method)element).Parameters.ToList(), context);
             }
             else if (element.ElementType == ElementType.Constructor)
             {
-                ProcessParameter(element, ((Constructor)element).Parameters.ToList(), context);
+                this.ProcessParameter(element, ((Constructor)element).Parameters.ToList(), context);
             }
 
             return true;
@@ -96,7 +108,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// True if all visited expressions are valid, False otherwise. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
-        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
             if (expression.ExpressionType != ExpressionType.VariableDeclarator)
             {
@@ -110,7 +122,7 @@ namespace CleanCodersStyleCopRules.Rule
                 return true;
             }
 
-            ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, variableDeclaratorExpression.ParentVariable.Type.Text, expression.Location.LineNumber, context);
+            this.ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, variableDeclaratorExpression.ParentVariable.Type.Text, expression.Location.LineNumber, context);
 
             return true;
         }
@@ -131,11 +143,11 @@ namespace CleanCodersStyleCopRules.Rule
         /// <param name="context">
         /// The context. 
         /// </param>
-        private static void ProcessParameter(CsElement element, IEnumerable<Parameter> parameters, CleanCoderAnalyzer context)
+        private void ProcessParameter(CsElement element, IEnumerable<Parameter> parameters, CleanCoderAnalyzer context)
         {
             foreach (Parameter parameter in parameters)
             {
-                ProcessVariableName(element, parameter.Name, parameter.Type.Text, parameter.LineNumber, context);
+                this.ProcessVariableName(element, parameter.Name, parameter.Type.Text, parameter.LineNumber, context);
             }
         }
 
@@ -161,7 +173,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context, this class. 
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        private static void ProcessVariableName(CsElement element, string variableName, string variableTypeDefinition, int lineNumber, CleanCoderAnalyzer context)
+        private void ProcessVariableName(CsElement element, string variableName, string variableTypeDefinition, int lineNumber, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(variableName, "variableName");
@@ -170,7 +182,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (Utility.IsSomeKindOfMatrix(variableTypeDefinition) && variableName.ToLower().EndsWith("s") == false && variableName.ToLower().EndsWith("x") == false)
             {
-                context.AddViolation(element, lineNumber, RuleName, variableName);
+                context.AddViolation(element, lineNumber, this.RuleName, variableName);
             }
         }
 

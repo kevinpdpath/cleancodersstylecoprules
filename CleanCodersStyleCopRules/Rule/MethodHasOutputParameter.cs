@@ -2,9 +2,6 @@
 // <copyright file="MethodHasOutputParameter.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a method contains output parameters.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -18,16 +15,28 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a method contains output parameters.
+    /// StyleCop custom rule that validates if a method contains output parameters.
     /// </summary>
-    public static class MethodHasOutputParameter
+    public class MethodHasOutputParameter : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MethodHasOutputParameter"/> class.
+        /// </summary>
+        public MethodHasOutputParameter()
+        {
+            this.ElementTypes.Add(ElementType.Method);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -55,7 +64,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
@@ -76,7 +85,7 @@ namespace CleanCodersStyleCopRules.Rule
             {
                 if (parameter.Modifiers == ParameterModifiers.Out)
                 {
-                    context.AddViolation(method, method.LineNumber, RuleName, method.Declaration.Name, parameter.Name);
+                    context.AddViolation(method, method.LineNumber, this.RuleName, method.Declaration.Name, parameter.Name);
                 }
             }
 

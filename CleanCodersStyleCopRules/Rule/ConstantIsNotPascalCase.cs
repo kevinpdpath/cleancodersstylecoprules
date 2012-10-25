@@ -2,9 +2,6 @@
 // <copyright file="ConstantIsNotPascalCase.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a constant is not following the PascalCase convention.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -18,16 +15,28 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a constant is not following the PascalCase convention.
+    /// StyleCop custom rule that validates if a constant is not following the PascalCase convention.
     /// </summary>
-    public static class ConstantIsNotPascalCase
+    public class ConstantIsNotPascalCase : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConstantIsNotPascalCase"/> class.
+        /// </summary>
+        public ConstantIsNotPascalCase()
+        {
+            this.StatementTypes.Add(StatementType.VariableDeclaration);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -61,7 +70,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// True if all visited statements are valid, False otherwise. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate.")]
-        public static bool ValidateStatement(Statement statement, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateStatement(Statement statement, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
             if (statement.StatementType != StatementType.VariableDeclaration)
             {
@@ -84,7 +93,7 @@ namespace CleanCodersStyleCopRules.Rule
                     return true;
                 }
 
-                ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, statement.LineNumber, context);
+                this.ProcessVariableName(parentElement, variableDeclaratorExpression.Identifier.Text, statement.LineNumber, context);
             }
 
             return true;
@@ -110,7 +119,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// The context, this class. 
         /// </param>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        private static void ProcessVariableName(CsElement element, string name, int lineNumber, CleanCoderAnalyzer context)
+        private void ProcessVariableName(CsElement element, string name, int lineNumber, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(name, "name");
@@ -119,7 +128,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (name.Equals(name.ToUpper(), StringComparison.InvariantCulture))
             {
-                context.AddViolation(element, lineNumber, RuleName, name);
+                context.AddViolation(element, lineNumber, this.RuleName, name);
             }
         }
 

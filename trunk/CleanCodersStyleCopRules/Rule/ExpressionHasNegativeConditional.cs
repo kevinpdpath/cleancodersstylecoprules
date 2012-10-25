@@ -2,9 +2,6 @@
 // <copyright file="ExpressionHasNegativeConditional.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if an expression has negative conditional.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -16,16 +13,28 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if an expression has negative conditional.
+    /// StyleCop custom rule that validates if an expression has negative conditional.
     /// </summary>
-    public static class ExpressionHasNegativeConditional
+    public class ExpressionHasNegativeConditional : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExpressionHasNegativeConditional"/> class.
+        /// </summary>
+        public ExpressionHasNegativeConditional()
+        {
+            this.ExpressionTypes.Add(ExpressionType.Unary);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -41,25 +50,25 @@ namespace CleanCodersStyleCopRules.Rule
         /// Validate if an expression has negative conditional with an expression.
         /// </summary>
         /// <param name="expression">
-        /// The expression.
+        /// The expression. 
         /// </param>
         /// <param name="parentExpression">
-        /// The parent expression.
+        /// The parent expression. 
         /// </param>
         /// <param name="parentStatement">
-        /// The parent statement.
+        /// The parent statement. 
         /// </param>
         /// <param name="parentElement">
-        /// The parent element.
+        /// The parent element. 
         /// </param>
         /// <param name="context">
-        /// The context, this class.
+        /// The context, this class. 
         /// </param>
         /// <returns>
-        /// Returns true to continue, false to stop visiting the elements in the code document.
+        /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitExpression.")]
-        public static bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateExpression(Expression expression, Expression parentExpression, Statement parentStatement, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(expression, "expression");
             Param.AssertNotNull(parentStatement, "parentStatement");
@@ -67,7 +76,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (expression is UnaryExpression && ((expression as UnaryExpression).OperatorType == UnaryExpression.Operator.Not))
             {
-                context.AddViolation(parentElement, expression.LineNumber, RuleName, expression.Text);
+                context.AddViolation(parentElement, expression.LineNumber, this.RuleName, expression.Text);
             }
 
             return true;

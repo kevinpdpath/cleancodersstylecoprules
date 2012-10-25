@@ -2,13 +2,11 @@
 // <copyright file="FileNameMustMatchTypeName.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a the file name matches the type name it contains.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
@@ -20,16 +18,30 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a the file name matches the type name it contains.
+    /// StyleCop custom rule that validates if a the file name matches the type name it contains.
     /// </summary>
-    public static class FileNameMustMatchTypeName
+    public class FileNameMustMatchTypeName : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileNameMustMatchTypeName"/> class.
+        /// </summary>
+        public FileNameMustMatchTypeName()
+        {
+            this.ElementTypes.Add(ElementType.Class);
+            this.ElementTypes.Add(ElementType.Struct);
+            this.ElementTypes.Add(ElementType.Interface);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -58,7 +70,7 @@ namespace CleanCodersStyleCopRules.Rule
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0034:MethodContainsTooManyLine", Justification = "Cannot split it any further.")]
-        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
@@ -70,9 +82,9 @@ namespace CleanCodersStyleCopRules.Rule
 
             string fileName = Path.GetFileNameWithoutExtension(element.Document.SourceCode.Path);
 
-            if (string.IsNullOrEmpty(fileName) == false && fileName.IndexOf(".", System.StringComparison.InvariantCultureIgnoreCase) >= 0)
+            if (string.IsNullOrEmpty(fileName) == false && fileName.IndexOf(".", StringComparison.InvariantCultureIgnoreCase) >= 0)
             {
-                int offset = fileName.IndexOf(".", System.StringComparison.InvariantCultureIgnoreCase);
+                int offset = fileName.IndexOf(".", StringComparison.InvariantCultureIgnoreCase);
 
                 fileName = fileName.Substring(0, offset);
             }
@@ -100,7 +112,7 @@ namespace CleanCodersStyleCopRules.Rule
             {
                 if (fileName.Contains(typeName) == false)
                 {
-                    context.AddViolation(element, element.LineNumber, RuleName, fileName, typeName);
+                    context.AddViolation(element, element.LineNumber, this.RuleName, fileName, typeName);
                 }
 
                 return true;
@@ -108,7 +120,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             if (fileName != typeName)
             {
-                context.AddViolation(element, element.LineNumber, RuleName, fileName, typeName);
+                context.AddViolation(element, element.LineNumber, this.RuleName, fileName, typeName);
             }
 
             return true;

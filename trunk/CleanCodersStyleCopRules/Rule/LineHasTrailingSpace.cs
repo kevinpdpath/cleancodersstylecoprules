@@ -2,9 +2,6 @@
 // <copyright file="LineHasTrailingSpace.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a code line, excluding comment, is ended with a space.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -19,16 +16,31 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a code line, excluding comment, is ended with a space.
+    /// StyleCop custom rule that validates if a code line, excluding comment, is ended with a space.
     /// </summary>
-    public static class LineHasTrailingSpace
+    public class LineHasTrailingSpace : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LineHasTrailingSpace"/> class.
+        /// </summary>
+        public LineHasTrailingSpace()
+        {
+            this.ElementTypes.Add(ElementType.Class);
+            this.ElementTypes.Add(ElementType.Enum);
+            this.ElementTypes.Add(ElementType.Interface);
+            this.ElementTypes.Add(ElementType.Struct);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -44,33 +56,26 @@ namespace CleanCodersStyleCopRules.Rule
         /// Validate if a code line, excluding comment, is ended with a space with an element.
         /// </summary>
         /// <param name="element">
-        /// The current element.
+        /// The current element. 
         /// </param>
         /// <param name="parentElement">
-        /// The parent element.
+        /// The parent element. 
         /// </param>
         /// <param name="context">
-        /// The context, this class.
+        /// The context, this class. 
         /// </param>
         /// <returns>
-        /// Returns true to continue, false to stop visiting the elements in the code document.
+        /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            DocumentRoot documentRoot = element as DocumentRoot;
+            List<string> lines = Utility.SplitSourceCodeInLine(element.Document.SourceCode);
 
-            if (documentRoot == null)
-            {
-                return true;
-            }
-
-            List<string> lines = Utility.SplitSourceCodeInLine(documentRoot.Document.SourceCode);
-
-            for (int lineOffset = 0; lineOffset < lines.Count; lineOffset++)
+            for (int lineOffset = element.Location.StartPoint.LineNumber; lineOffset < element.Location.EndPoint.LineNumber; lineOffset++)
             {
                 int currentLineNumber = lineOffset + 1;
 
@@ -100,7 +105,7 @@ namespace CleanCodersStyleCopRules.Rule
 
                 if (currentLine.Length > trimmedLength)
                 {
-                    context.AddViolation(documentRoot, currentLineNumber, RuleName, currentLine.Length);
+                    context.AddViolation(element, currentLineNumber, this.RuleName, currentLine.Length);
                 }
             }
 

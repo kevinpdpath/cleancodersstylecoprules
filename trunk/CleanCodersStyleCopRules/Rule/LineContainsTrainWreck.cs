@@ -2,9 +2,6 @@
 // <copyright file="LineContainsTrainWreck.cs" company="None, it's free for all.">
 //   Copyright (c) None, it's free for all. All rights reserved.
 // </copyright>
-// <summary>
-//   StyleCop custom rule that validates if a code line contains a train wreck.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace CleanCodersStyleCopRules.Rule
@@ -20,16 +17,31 @@ namespace CleanCodersStyleCopRules.Rule
     using StyleCop.CSharp;
 
     /// <summary>
-    ///   StyleCop custom rule that validates if a code line contains a train wreck.
+    /// StyleCop custom rule that validates if a code line contains a train wreck.
     /// </summary>
-    public static class LineContainsTrainWreck
+    public class LineContainsTrainWreck : CustomRuleBase
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LineContainsTrainWreck"/> class.
+        /// </summary>
+        public LineContainsTrainWreck()
+        {
+            this.ElementTypes.Add(ElementType.Class);
+            this.ElementTypes.Add(ElementType.Enum);
+            this.ElementTypes.Add(ElementType.Interface);
+            this.ElementTypes.Add(ElementType.Struct);
+        }
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
         /// Gets the rule setting name.
         /// </summary>
-        public static string RuleSettingName
+        public static new string RuleSettingName
         {
             get
             {
@@ -38,9 +50,9 @@ namespace CleanCodersStyleCopRules.Rule
         }
 
         /// <summary>
-        ///   Gets the rule name.
+        /// Gets the rule name.
         /// </summary>
-        public static string RuleName
+        public override string RuleName
         {
             get
             {
@@ -68,21 +80,14 @@ namespace CleanCodersStyleCopRules.Rule
         /// Returns true to continue, false to stop visiting the elements in the code document. 
         /// </returns>
         [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "It's a delegate for Analyzer.VisitElement.")]
-        public static bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
+        public override bool ValidateElement(CsElement element, CsElement parentElement, CleanCoderAnalyzer context)
         {
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            DocumentRoot documentRoot = element as DocumentRoot;
+            List<string> lines = Utility.SplitSourceCodeInLine(element.Document.SourceCode);
 
-            if (documentRoot == null)
-            {
-                return true;
-            }
-
-            List<string> lines = Utility.SplitSourceCodeInLine(documentRoot.Document.SourceCode);
-
-            for (int lineOffset = 0; lineOffset < lines.Count; lineOffset++)
+            for (int lineOffset = element.Location.StartPoint.LineNumber; lineOffset < element.Location.EndPoint.LineNumber; lineOffset++)
             {
                 int currentLineNumber = lineOffset + 1;
 
@@ -103,7 +108,7 @@ namespace CleanCodersStyleCopRules.Rule
 
                     if (numberOfWagon > 3)
                     {
-                        context.AddViolation(documentRoot, currentLineNumber, RuleName, numberOfWagon, context.AnalyserSetting[RuleSettingName]);
+                        context.AddViolation(element, currentLineNumber, this.RuleName, numberOfWagon, context.AnalyserSetting[RuleSettingName]);
                     }
                 }
             }

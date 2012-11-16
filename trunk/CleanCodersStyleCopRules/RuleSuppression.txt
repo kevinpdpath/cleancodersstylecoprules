@@ -9,7 +9,6 @@ Typically, you would slap on of those attributes to a class or a method to remov
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0025:VariableNameIsTooShort", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0034:MethodContainsTooManyLine", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0035:BlockStatementMustNotBeEmpty", Justification = "Include your reason here.")]
-[SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0037:MethodContainsSwitchStatement", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0041:MethodHasBooleanParameter", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0042:MethodHasTooManyArgument", Justification = "Include your reason here.")]
 [SuppressMessage("CleanCodersStyleCopRules.CleanCoderAnalyzer", "CC0045:MethodHasOutputParameter", Justification = "Include your reason here.")]

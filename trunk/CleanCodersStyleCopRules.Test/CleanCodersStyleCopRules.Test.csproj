@@ -125,9 +125,6 @@
     <Compile Include="Resources\VariableNameIsTooShortTest.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Resources\MethodContainsSwitchStatementTest.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Resources\MethodHasBooleanParameterTest.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>

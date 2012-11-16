@@ -73,7 +73,6 @@
     <Compile Include="Rule\LineContainsTrainWreck.cs" />
     <Compile Include="Rule\LineIsTooLong.cs" />
     <Compile Include="Rule\MethodContainsGotoStatement.cs" />
-    <Compile Include="Rule\MethodContainsSwitchStatement.cs" />
     <Compile Include="Rule\MethodHasBooleanParameter.cs" />
     <Compile Include="Rule\MethodHasOutputParameter.cs" />
     <Compile Include="Rule\MethodHasTooManyArgument.cs" />

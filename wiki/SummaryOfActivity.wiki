@@ -70,3 +70,7 @@ Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.40.0. A
 *October 25th, 2012*
 
 Major overhaul in the add-in. Went from a static class design back to concrete classes, in order to facilitate the addition of new rules and enforce a better control design through interfaces. Optimized speed and fixed 2 bugs, one related to the suppression of some rules (thank you Andy) and the other related to the fact that on occasion, [http://stylecop.codeplex.com/ StyleCop] would freeze during a `Rrescan All`. Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.41.0.
+
+*November 16th, 2012*
+
+Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.42.0. Even if the `CC0037 - Method conains switch statement` is a part of [http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882 Clean Code], I have decided to remove it because of numerous complaints. 

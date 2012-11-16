@@ -73,4 +73,4 @@ Major overhaul in the add-in. Went from a static class design back to concrete c
 
 *November 16th, 2012*
 
-Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.42.0. Even if the `CC0037 - Method conains switch statement` is a part of [http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882 Clean Code], I have decided to remove it because of numerous complaints. 
+Updated the Trunk to match [http://stylecop.codeplex.com/ StyleCop] v4.7.42.0. Also, a rule was deleted. Even if the `CC0037 - Method conains switch statement` is a part of the techings of [http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882 Clean Code], I have removed it because of numerous complaints. 

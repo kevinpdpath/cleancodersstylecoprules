@@ -126,14 +126,6 @@
           Clean Code states that a block should do one thing, thus not be empty. (Page 35)
         </Description>
       </Rule>
-      <Rule Name="MethodContainsSwitchStatement" CheckId="CC0037">
-        <Context>
-          The switch/case statement could probably be eliminated by polymorphism techniques.
-        </Context>
-        <Description>
-          Clean Code states that you should always prefer polymorphism techniques over the use of a switch case. (Page 37)
-        </Description>
-      </Rule>
       <Rule Name="MethodHasBooleanParameter" CheckId="CC0041">
         <Context>
           The method '{0}' has a boolean parameter named '{1}' which means you are not following the single responsability principle. Please refactor the method to not use such type of parameter.

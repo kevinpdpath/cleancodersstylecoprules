@@ -167,15 +167,6 @@ namespace CleanCodersStyleCopRules.Test
         }
 
         /// <summary>
-        ///   The method contains switch statement.
-        /// </summary>
-        [Test]
-        public void MethodContainsSwitchStatement()
-        {
-            this.AnalyzeCodeWithAssertion("MethodContainsSwitchStatementTest.cs", 1);
-        }
-
-        /// <summary>
         ///   The method contains too many line.
         /// </summary>
         [Test]

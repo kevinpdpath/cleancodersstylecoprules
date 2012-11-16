@@ -19,7 +19,7 @@ namespace CleanCodersStyleCopRules.Test.Resources
         #region Public Methods and Operators
 
         /// <summary>
-        /// Methods has switch statement.
+        /// Methods has goto statement.
         /// </summary>
         /// <param name="number">
         /// The param number.

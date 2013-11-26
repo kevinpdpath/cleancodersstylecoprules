@@ -86,7 +86,7 @@ namespace CleanCodersStyleCopRules.Rule
 
             List<string> lines = Utility.SplitSourceCodeInLine(element.Document.SourceCode);
 
-            for (int lineOffset = element.Location.StartPoint.LineNumber; lineOffset < element.Location.EndPoint.LineNumber; lineOffset++)
+            for (int lineOffset = element.Location.StartPoint.LineNumber - 1; lineOffset < element.Location.EndPoint.LineNumber; lineOffset++)
             {
                 int currentLineNumber = lineOffset + 1;
 

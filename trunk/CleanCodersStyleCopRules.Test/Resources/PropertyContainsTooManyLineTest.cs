@@ -46,23 +46,41 @@ namespace CleanCodersStyleCopRules.Test.Resources
             set
             {
                 this.isItCloudy = value;
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+
                 Console.WriteLine("Cloudy's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
             }
         }
@@ -80,25 +98,27 @@ namespace CleanCodersStyleCopRules.Test.Resources
             set
             {
                 this.isItSunny = value;
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine("Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("1 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("2 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("3 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("4 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("5 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("6 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("7 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("8 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("9 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("10 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("11 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("12 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("13 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("14 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("15 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("16 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("17 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("18 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("19 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("20 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
+                Console.WriteLine("21 Sunny's flag is set to: {0}", this.isItSunny.ToString(CultureInfo.InvariantCulture));
             }
         }
 

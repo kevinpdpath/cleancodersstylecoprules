@@ -25,51 +25,97 @@ namespace CleanCodersStyleCopRules.Test.Resources
         public void FiftyLine()
         {
             int abc = 0;
+
             abc += 1;
+
             abc += 2;
+
             abc += 3;
+
             abc += 4;
+
             abc += 5;
+
             abc += 6;
+
             abc += 7;
+
             abc += 8;
+
             abc += 9;
+
             abc += 10;
+
             abc += 11;
+
             abc += 12;
+
             abc += 13;
+
             abc += 14;
+
             abc += 15;
+
             abc += 16;
+
             abc += 17;
+
             abc += 18;
+
             abc += 19;
+
             abc += 20;
+
             abc += 21;
+
             abc += 22;
+
             abc += 23;
+
             abc += 24;
+
             abc += 25;
+
             abc += 26;
+
             abc += 27;
+
             abc += 28;
+
             abc += 29;
+
             abc += 30;
+
             abc += 31;
+
             abc += 32;
+
             abc += 33;
+
             abc += 34;
+
             abc += 35;
+
             abc += 36;
+
             abc += 37;
+
             abc += 38;
+
             abc += 39;
+
             abc += 40;
+
             abc += 41;
+
             abc += 42;
+
             abc += 43;
+
             abc += 44;
+
             abc += 45;
+
             Console.WriteLine(abc);
         }
 

@@ -112,7 +112,7 @@
       </Rule>
       <Rule Name="MethodContainsTooManyLine" CheckId="CC0034">
         <Context>
-          The method '{0}' has {1} lines. That is more than the maximum number of lines allowed which is {2}. Please refactor the method to make it smaller.
+          The method '{0}' has {1} lines of code, excluding blank lines. That is more than the maximum number of lines of code allowed which is {2}. Please refactor the method to make it smaller.
         </Context>
         <Description>
           Clean Code states that a method should be short, follow the single responsability rule, and be no longer than one page in your text exitor, which is roughly 20 lines. (Page 34)
@@ -168,7 +168,7 @@
       </Rule>
       <Rule Name="ClassContainsTooManyLine" CheckId="CC0077">
         <Context>
-          The class '{0}' has {1} lines. That is more than the maximum number of lines allowed which is {2}. Please refactor the class to make it smaller.
+          The class '{0}' has {1} lines of code, excluding blank lines. That is more than the maximum number of lines of code allowed which is {2}. Please refactor the class to make it smaller.
         </Context>
         <Description>
           Clean Code states that a class should be short, follow the single responsability rule, and be no longer than 500 lines, where 200 lines would be ideal. (Page 77)
@@ -224,7 +224,7 @@
       </Rule>
       <Rule Name="PropertyContainsTooManyLine" CheckId="CC0295">
         <Context>
-          The property '{0}' has {1} lines. That is more than the maximum number of lines allowed which is {2}. Please refactor the property to make it smaller.
+          The property '{0}' has {1} lines of code, excluding blank lines. That is more than the maximum number of lines of code allowed which is {2}. Please refactor the property to make it smaller.
         </Context>
         <Description>
           Clean Code states that a method should not be longer than 20 lines. Surely, a property should not be longer than a method. Hence, make sure the property does what it should do, and that a misplaced responsability does not occur within the property itself. (Page 295)

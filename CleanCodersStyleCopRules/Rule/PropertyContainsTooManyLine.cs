@@ -6,8 +6,11 @@
 
 namespace CleanCodersStyleCopRules.Rule
 {
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
+
+    using CleanCodersStyleCopRules.Common;
 
     using StyleCop;
     using StyleCop.CSharp;
@@ -78,7 +81,19 @@ namespace CleanCodersStyleCopRules.Rule
             Param.AssertNotNull(element, "element");
             Param.AssertNotNull(context, "context");
 
-            int numberOfLinesInProperty = element.Location.LineSpan;
+            List<string> lines = Utility.SplitSourceCodeInLine(element.Document.SourceCode);
+
+            int numberOfLinesInProperty = 0;
+
+            for (int lineOffset = element.Location.StartPoint.LineNumber - 1; lineOffset < element.Location.EndPoint.LineNumber; lineOffset++)
+            {
+                string currentLine = lines[lineOffset].Trim();
+
+                if (string.IsNullOrEmpty(currentLine) == false)
+                {
+                    numberOfLinesInProperty++;
+                }
+            }
 
             if (numberOfLinesInProperty > (int)context.AnalyserSetting[RuleSettingName])
             {

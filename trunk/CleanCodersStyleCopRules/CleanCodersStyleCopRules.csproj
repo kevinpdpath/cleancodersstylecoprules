@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="lib\ReadMe.txt" />
     <Content Include="lib\StyleCop.CSharp.dll" />
+    <Content Include="lib\StyleCop.CSharp.Rules.dll" />
     <Content Include="lib\StyleCop.dll" />
     <Content Include="ReadMe.txt" />
     <Content Include="RuleSuppression.txt" />

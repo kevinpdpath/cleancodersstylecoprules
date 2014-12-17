@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodersStyleCopRules", "CleanCodersStyleCopRules\CleanCodersStyleCopRules.csproj", "{C44BADF1-B65F-4CEE-A22D-A0AD66EE3F43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodersStyleCopRules.Test", "CleanCodersStyleCopRules.Test\CleanCodersStyleCopRules.Test.csproj", "{8A8B0C35-6961-45CF-95A0-C8AD5F8C02FB}"

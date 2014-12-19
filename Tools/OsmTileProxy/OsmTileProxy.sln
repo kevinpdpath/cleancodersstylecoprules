@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OsmTileProxy", "OsmTileProxy\OsmTileProxy.csproj", "{2886D1D0-1CDB-4AC6-AE01-E2CEF09394CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{09245AB4-13E1-4D40-8DD5-4451E3E9555A}"
+	ProjectSection(SolutionItems) = preProject
+		packages\repositories.config = packages\repositories.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
